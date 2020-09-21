@@ -1,6 +1,86 @@
 /**
  * Palettes
  */
+ .palette-white {
+  a {
+    border-color: _palette(accent-white);
+
+    &:hover {
+      border-color: currentColor;
+    }
+  }
+
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  .button {
+    background: _palette(accent-white);
+    border-color: _palette(accent-white);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: transparent;
+      border-color: _palette(accent-white);
+      box-shadow: 0 0 1px 0.5em rgba(_palette(accent-white),.2);
+    }
+  }
+
+  .underline {
+    &:after {
+      border-color: _palette(accent-white);
+    }
+  }
+
+  .profile {
+    .avatar {
+      border-color: _palette(accent-white);
+      box-shadow: 0 0 1px 7px rgba(_palette(accent-white),.2);
+
+      @media only screen and (min-width: 801px) {
+        box-shadow: 0 0 1px 11px rgba(_palette(accent-white),.2);
+      }
+    }
+  }
+
+  .social-links {
+    a {
+      &:not(.button) {
+        &:hover {
+          color: _palette(accent-white);
+        }
+      }
+
+      &.button-icon {
+        &:hover {
+          background: _palette(accent-white);
+          border-color: _palette(accent-white);
+          box-shadow: 0 0 1px 5px rgba(_palette(accent-white),.2);
+        }
+      }
+    }
+  }
+
+  .menu-item.current-menu-item,
+  .menu-item :not(.button):hover,
+  .post-title a:hover {
+    color: _palette(accent-white);
+  }
+
+  .site-header.dark {
+    .social-links .button-icon:hover {
+      border-color: _palette(accent-white);
+    }
+
+    .menu-item .button:hover,
+    .menu-item .button:focus,
+    .menu-item .button:active {
+      color: _palette(accent-white);
+    }
+  }
+}
+
 .palette-blue {
   a {
     border-color: _palette(accent-blue);
