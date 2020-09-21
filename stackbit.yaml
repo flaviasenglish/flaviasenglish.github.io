@@ -141,10 +141,11 @@ models:
         description: The color palette used for the site.
         options:
           - blue
+          - white
           - green
           - orange
           - violet
-        default: green
+        default: white
       - type: model
         name: header
         label: Header Configuration

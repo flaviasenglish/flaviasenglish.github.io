@@ -1,36 +1,36 @@
 {
     "description": "Personal blogging theme for Stackbit",
     "layout_style": "overflow",
-    "palette": "blue",
+    "palette": "white",
     "header": {
-        "title": "Stackbit Fresh",
-        "tagline": "Header Tagline",
-        "profile_img": "images/avatar.png",
+        "title": "Flávia Forcatho",
+        "tagline": "Professora particular de Inglês, tradutora, Mestre em Língua Inglesa pela UFMG",
+        "profile_img": "images/avatar.jpg",
         "background": "dark",
         "has_nav": true,
         "nav_links": [
             {
-                "label": "Home",
+                "label": "Sobre mim",
                 "url": "/",
                 "style": "link"
             },
             {
-                "label": "Blog",
-                "url": "/blog/",
+                "label": "Aulas",
+                "url": "/classes/",
                 "style": "link"
             },
             {
-                "label": "Style Guide",
-                "url": "/style-guide/",
+                "label": "Tradução e revisão",
+                "url": "/translation-proofreading/",
                 "style": "link"
             },
             {
-                "label": "About",
-                "url": "/about/",
+                "label": "Avaliações",
+                "url": "/reviews/",
                 "style": "link"
             },
             {
-                "label": "Contact",
+                "label": "Contato",
                 "url": "/contact/",
                 "style": "link"
             }
@@ -38,38 +38,10 @@
         "has_social": true,
         "social_links": [
             {
-                "label": "Twitter",
-                "url": "https://twitter.com/",
-                "style": "icon",
-                "icon_class": "fa-twitter",
-                "new_window": true
-            },
-            {
-                "label": "Instagram",
-                "url": "https://www.instagram.com/",
-                "style": "icon",
-                "icon_class": "fa-instagram",
-                "new_window": true
-            },
-            {
-                "label": "GitHub",
-                "url": "https://github.com/",
-                "style": "icon",
-                "icon_class": "fa-github",
-                "new_window": true
-            },
-            {
                 "label": "LinkedIn",
                 "url": "https://www.linkedin.com/",
                 "style": "icon",
                 "icon_class": "fa-linkedin",
-                "new_window": true
-            },
-            {
-                "label": "DEV",
-                "url": "https://dev.to/",
-                "style": "icon",
-                "icon_class": "fa-dev",
                 "new_window": true
             }
         ]
