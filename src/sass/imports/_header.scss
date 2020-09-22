@@ -48,7 +48,7 @@
   }
 
   .avatar {
-    border: 2px solid _palette(accent);
+    border: 2px solid white !important;
     box-shadow: none !important; //0 0 1px 7px rgba(_palette(accent),.2);
     border-radius: 100%;
     display: block;
@@ -56,6 +56,36 @@
     object-fit: cover;
     height: 45px;
     width: 45px;
+  }
+}
+
+.logo-outer {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  width: 100%;
+  height: 100px;
+  place-content: center;
+  background-color: #bd1e23;
+}
+
+.logo {
+  display: block;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .logo-outer {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    width: 100%;
+    height: 20px;
+    place-content: center;
+    background-color: #bd1e23;
+    margin-bottom: 0;
   }
 }
 
@@ -125,11 +155,12 @@
   padding: 0.5em 0;
 
   &.current-menu-item {
-    color: _palette(accent);
+    color: #ffffff !important;
+    font-weight: bold;
   }
 
   &:not(.menu-button):last-child {
-    border-bottom: 1px solid _palette(border);
+    border-bottom: 1px solid #ffffff;
   }
 
   &.menu-button {
@@ -152,7 +183,7 @@
       color: inherit;
   
       &:hover {
-        color: _palette(accent);
+        color: #ffffff !important;
       }
     }
   }
@@ -191,9 +222,9 @@
       width: 2em;
   
       &:hover {
-        background: _palette(accent);
-        border-color: _palette(accent);
-        box-shadow: 0 0 1px 5px rgba(_palette(accent),.2);
+        //background: _palette(accent);
+        //border-color: _palette(accent);
+        //box-shadow: 0 0 1px 5px rgba(_palette(accent),.2);
         color: #fff;
       }
     }
@@ -201,12 +232,12 @@
 }
 
 .site-header.dark {
-  background: _palette(secondary);
+  background: #bd1e23;
   border: 0;
-  color: _palette(meta);
+  color: #cccccc;
 
   .site-navigation {
-    background: _palette(secondary);
+    background: #bd1e23;
   }
 
   .site-title {
@@ -218,18 +249,18 @@
       &:hover,
       &:focus,
       &:active {
-        color: _palette(accent);
+        color: #ffffff;
       }
     }
   }
 
   .menu-item,
   .social-links .button-icon {
-    border-color: _palette(primary);
+    border-color: #cccccc;
   }
 
   .social-links .button-icon:hover {
-    border-color: _palette(accent);
+    border-color: #ffffff;
   }
 }
 
@@ -247,14 +278,14 @@
 
   .site-header-wrap {
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
     position: relative;
   }
 
   .site-header-inside {
     padding-bottom: 3.33333em;
-    padding-top: 3.33333em;
+    padding-top: 0; //3.33333em;
   }
 
   .site-branding {
@@ -265,7 +296,7 @@
   }
 
   .site-identity {
-    margin-bottom: 1.66667em;
+    margin-bottom: 0.8em;
     padding: 0;
   }
 
@@ -278,11 +309,11 @@
   }
 
   .profile {
-    margin: 0 0 1.66667em;
+    margin: 0 0 0.8em;
 
     .avatar {
       border-width: 3px;
-      box-shadow: 0 0 1px 11px rgba(_palette(accent),.2);
+      box-shadow: 0 0 1px 11px white;
       object-fit: cover;
       height: 160px;
       width: 160px;
@@ -290,14 +321,15 @@
   }
 
   .site-title {
-    font-size: 1.33333rem;
+    font-size: 1.6rem;
     line-height: 1.2;
   }
 
   .site-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
     margin-top: 0.4em;
+    color: white;
   }
 
   .menu-toggle {

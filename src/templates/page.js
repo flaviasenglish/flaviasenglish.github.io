@@ -21,7 +21,7 @@ export default class Page extends React.Component {
             <Layout {...this.props}>
               <article className="post page post-full">
                 <header className="post-header inner-sm">
-                  <h1 className="post-title underline">{_.get(this.props, 'pageContext.frontmatter.title', null)}</h1>
+                  <h1 className="post-title">{_.get(this.props, 'pageContext.frontmatter.title', null)}</h1>
                   {_.get(this.props, 'pageContext.frontmatter.subtitle', null) && (
                   <div className="post-subtitle inner-sm">
                     {htmlToReact(_.get(this.props, 'pageContext.frontmatter.subtitle', null))}

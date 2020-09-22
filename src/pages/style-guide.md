@@ -57,7 +57,7 @@ Blocks of code are either fenced by lines with three back-ticks, or are indented
 <!-- Some example CSS code -->
 body {
   color: #333;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Alegreya, Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
 ```

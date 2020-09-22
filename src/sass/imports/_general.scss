@@ -110,13 +110,12 @@ pre {
 }
 
 blockquote {
-  border-bottom: 1px solid _palette(secondary);
   border-top: 3px solid _palette(secondary);
-  font-size: 1.88889em;
+  font-size: 1.2em;
   line-height: 1.25;
   margin: 2rem 0;
-  padding-bottom: 1.66667rem;
-  padding-top: 1.33333rem;
+  padding-top: 1.8rem;
+  text-align: justify;
 
   &:first-child {
     margin-top: 0
@@ -132,13 +131,14 @@ blockquote {
 
   small,
   cite {
-    color: _palette(meta);
+    color: #666666;
     display: block;
-    font-size: 0.52941em;
+    font-size: 0.8em;
     font-style: normal;
     font-weight: normal;
     line-height: 1.5;
-    margin-top: 1em;
+    margin-top: 0.5em;
+    font-weight: bold;
 
     &:last-child {
       margin-bottom: 0;
@@ -352,7 +352,7 @@ input[type="reset"],
   &:active {
     background: transparent;
     border-color: _palette(accent);
-    box-shadow: 0 0 1px 0.5em rgba(_palette(accent),.2);
+    //box-shadow: 0 0 1px 0.5em rgba(_palette(accent),.2);
     color: _palette(secondary);
     outline: 0;
   }

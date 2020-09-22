@@ -8,6 +8,9 @@ export default class Header extends React.Component {
         return (
             <header id="masthead" className={'site-header ' + _.get(this.props, 'pageContext.site.siteMetadata.header.background', null)}>
               <div className="site-header-wrap">
+                <div className="logo-outer">
+                  <img className="logo" src="images/logo.jpg" />
+                </div>
                 <div className="site-header-inside">
                   <div className="site-branding">
                     {_.get(this.props, 'pageContext.site.siteMetadata.header.profile_img', null) && (
