@@ -10,7 +10,7 @@ $palette: (
   primary:       #555e69,
   secondary:     darken(#555e69, 15%),
   meta:          lighten(#555e69, 25%),
-  border:        lighten(#555e69, 55%),
+  border:        lighten(#555e69, 10%),
   bg:            lighten(#555e69, 60%),
   accent:        #1de2bc,
   accent-blue:   #10bcf9,
@@ -20,6 +20,8 @@ $palette: (
 );
 
 @import "imports/functions";
+
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 @import "../../static/assets/css/fontawesome.min.css";
 @import "../../static/assets/css/brands.min.css";

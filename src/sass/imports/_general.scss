@@ -12,6 +12,7 @@ body {
   background: #fff;
   color: _palette(primary);
   line-height: 1.66667;
+  font-family: unset;
 }
 
 a {
@@ -36,7 +37,7 @@ h6 {
   color: _palette(secondary);
   font-weight: bold;
   line-height: 1.2;
-  margin: 1.66667rem 0 0.83333rem;
+  margin: 1.0rem 0 0.1rem;
   text-rendering: optimizeLegibility;
 
   &:first-child {
@@ -144,6 +145,11 @@ blockquote {
       margin-bottom: 0;
     }
   }
+}
+
+.paragrafo {
+  margin-left: 26px;
+  font-size: 90%;
 }
 
 dl {
