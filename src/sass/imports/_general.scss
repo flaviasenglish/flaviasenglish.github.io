@@ -37,7 +37,7 @@ h6 {
   color: _palette(secondary);
   font-weight: bold;
   line-height: 1.2;
-  margin: 1.0rem 0 0.1rem;
+  margin: 1.0rem 0 1.0rem;
   text-rendering: optimizeLegibility;
 
   &:first-child {
@@ -73,6 +73,7 @@ h6 {
 
 p {
   margin: 0 0 1.66667em;
+  text-align: justify;
 }
 
 address {
