@@ -10,7 +10,7 @@ const withPrefix = require("./src/utils/withPrefix").default;
 exports.onRenderBody = function({ setHeadComponents, setPostBodyComponents }) {
 
     setHeadComponents([
-        
+        <link rel="shortcut icon" type="image/png"  href="./favicon.png" />
     ]);
 
     setPostBodyComponents([

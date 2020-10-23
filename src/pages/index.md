@@ -25,7 +25,7 @@ template: page
 ### Certificações
 
 <div class="row">
-  <div class="col-md-4" style="text-align: center">
+  <div class="col-md-4 col-sm-4 col-6" style="text-align: center">
     <div style="margin-top: 16px; margin-bottom: 8px">
       <img src="images/certificate.png" style="width: 48px" />
     </div>
@@ -35,7 +35,7 @@ template: page
     </div>
   </div>
 
-  <div class="col-md-4" style="text-align: center">
+  <div class="col-md-4 col-sm-4 col-6" style="text-align: center">
     <div style="margin-top: 16px; margin-bottom: 8px">
       <img src="images/certificate.png" style="width: 48px" />
     </div>
@@ -45,7 +45,7 @@ template: page
     </div>
   </div>
 
-  <div class="col-md-4" style="text-align: center">
+  <div class="col-md-4 col-sm-4 col-6" style="text-align: center">
     <div style="margin-top: 16px; margin-bottom: 8px">
       <img src="images/certificate.png" style="width: 48px" />
     </div>
@@ -55,7 +55,7 @@ template: page
     </div>
   </div>
 
-  <div class="col-md-4" style="text-align: center">
+  <div class="col-md-4 col-sm-4 col-6" style="text-align: center">
     <div style="margin-top: 16px; margin-bottom: 8px">
       <img src="images/certificate.png" style="width: 48px" />
     </div>
@@ -65,7 +65,7 @@ template: page
     </div>
   </div>
 
-  <div class="col-md-4" style="text-align: center">
+  <div class="col-md-4 col-sm-4 col-6" style="text-align: center">
     <div style="margin-top: 16px; margin-bottom: 8px">
       <img src="images/certificate.png" style="width: 48px" />
     </div>
@@ -75,7 +75,7 @@ template: page
     </div>
   </div>
 
-  <div class="col-md-4" style="text-align: center">
+  <div class="col-md-4 col-sm-4 col-6" style="text-align: center">
     <div style="margin-top: 16px; margin-bottom: 8px">
       <img src="images/certificate.png" style="width: 48px" />
     </div>

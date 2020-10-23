@@ -71,9 +71,12 @@
 
 .logo {
   display: block;
-  background-size: cover;
-  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
+  height: 300px;
+  background-image: url("/images/logo.jpg");
 }
 
 @media only screen and (max-width: 800px) {
@@ -82,10 +85,14 @@
     flex-direction: column;
     background-size: cover;
     width: 100%;
-    height: 20px;
+    height: 60px;
     place-content: center;
     background-color: #bd1e23;
     margin-bottom: 0;
+  }
+
+  .logo {
+    background-image: url("/images/logo_mobile.jpg");;
   }
 }
 

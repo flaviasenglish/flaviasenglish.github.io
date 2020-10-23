@@ -1,11 +1,11 @@
 {
-    "description": "Personal blogging theme for Stackbit",
+    "description": "Flávia's English",
     "layout_style": "overflow",
     "palette": "white",
     "header": {
         "title": "Flávia Forcatho",
         "tagline": "Professora particular de Inglês, tradutora, Mestre em Língua Inglesa pela UFMG",
-        "profile_img": "images/avatar.jpg",
+        "profile_img": "images/avatar.png",
         "background": "dark",
         "has_nav": true,
         "nav_links": [

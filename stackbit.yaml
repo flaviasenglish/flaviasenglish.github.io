@@ -29,8 +29,6 @@ sourceMapping:
     target:
       file: config.yml
       fieldPath: params.header.tagline
-  - source:
-      fieldPath: author.avatar
     target:
       file: config.yml
       fieldPath: params.header.profile_img

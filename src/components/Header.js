@@ -9,7 +9,7 @@ export default class Header extends React.Component {
             <header id="masthead" className={'site-header ' + _.get(this.props, 'pageContext.site.siteMetadata.header.background', null)}>
               <div className="site-header-wrap">
                 <div className="logo-outer">
-                  <img className="logo" src={withPrefix("images/logo.jpg")} />
+                  <div className="logo"></div>
                 </div>
                 <div className="site-header-inside">
                   <div className="site-branding">
