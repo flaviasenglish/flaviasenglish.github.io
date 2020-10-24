@@ -5,6 +5,7 @@
   background: #fff;
   border-bottom: 1px solid _palette(border);
   color: _palette(primary);
+  text-align: center;
 }
 
 .site-header-inside {
@@ -118,7 +119,9 @@
 }
 
 #menu-toggle {
-  margin-left: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+  flex-shrink: 0;
   z-index: 100;
 }
 
@@ -135,6 +138,7 @@
   visibility: hidden;
   width: 100%;
   z-index: 90;
+  top: 140px;
 }
 
 .site-nav-wrap {
@@ -209,6 +213,10 @@
   flex-wrap: wrap;
   margin-top: 1.66667em;
 
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
   a {
     color: inherit;
     margin: 0 10px 0.5em 0;
@@ -273,6 +281,10 @@
   }
 }
 
+.site-identity {
+  flex-grow: 1;
+}
+
 @media only screen and (min-width: 801px) {
   .site-header {
     border-bottom: 0;
@@ -280,7 +292,6 @@
     height: 100%;
     left: 0;
     position: fixed;
-    text-align: center;
     top: 0;
     width: 30vw;
   }
@@ -307,6 +318,7 @@
   .site-identity {
     margin-bottom: 0.8em;
     padding: 0;
+    flex-grow: 1;
   }
 
   .site-logo {

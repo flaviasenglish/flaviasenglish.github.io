@@ -27,8 +27,14 @@ Me iniciei com aulas online em 2015, ainda pelo Skype, e hoje atendo pelo Zoom, 
 
 ### Por que aula online?
 
-<div>
-  <img src="../images/classes/image7.png" style="float:right; height: 200px; margin: 30px" />
+<div style="width: 100%; display: flex; flex-direction: column; text-align-last: center">
+  <div style="width: 100%">
+    <div class="row">
+      <div class="col-12">
+        <img src="../images/classes/image7.png" style="max-height: 200px; margin: 20px" />
+      </div>
+    </div>
+  </div>
 </div>
 
 A grande vantagem da aula online é não requerer deslocamento. Além de pouparmos tempo, evitamos atrasos e ausências decorrentes de problemas de deslocamento (trânsito, chuva forte, viagens, etc..). Em geral, alunos virtuais cancelam e remarcam aulas bem menos frequentemente do que os presenciais.
