@@ -394,6 +394,16 @@ input[type="reset"],
   width: 30px;
 }
 
+.card-header {
+  background-color: #bd2c29;
+  color: white;
+}
+
+.card {
+  border-color: #bd2c29;
+  height: 100%;
+}
+
 /* Videos, audios and embeds */
 embed,
 iframe,

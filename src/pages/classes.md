@@ -3,7 +3,16 @@ title: Aulas
 template: page
 ---
 
-### Método
+<h3>Índice</h3>
+<ul>
+  <li><a href="#metodo">Método</a></li>
+  <li><a href="#aulasonline">Aulas online</a></li>
+  <li><a href="#comofunciona">Como funciona a aula online?</a></li>
+  <li><a href="#aulaexperimental">Aula experimental</a></li>
+  <li><a href="#valores">Valores</a></li>
+</ul>
+
+<h3 id="metodo">Método</h3>
 Essa é quase sempre a primeira pergunta que recebo de alunos interessados: “qual seu método?” No entanto, cada aluno é uma combinação única de perfil de aprendizagem, objetivos com a língua, experiências prévias de estudo, interesses, personalidade, prazos. É impossível que um único método atenda a todos. Por isso, <b>não tenho um método fixo</b>: trabalho com uma variedade de abordagens e materiais (incluindo material próprio), acredito em metodologia flexível e aulas diversificadas.
 
 Os alunos preenchem um formulário antes do início das aulas, para que eu possa conhecê-los melhor e pensar em um plano inicial de estudos. Alunos que se identificam como falantes intermediários ou avançados fazem um teste de nivelamento gratuito para identificarmos as habilidades (fala, escuta, leitura e escrita) que necessitam maior atenção. O teste irá precisar o nível CEFR do aluno em cada habilidade. Ao longo do curso, os alunos são livres para opinar sobre as atividades selecionadas ou sugerir uma mudança de rota (por exemplo, caso uma nova demanda apareça, como um exame de proficiência, uma viagem ao exterior, etc.) Aos poucos nós vamos, em conjunto, ajustando as aulas às necessidades e interesses do aluno. Metodologias precisam fluir, porque a vida flui.
@@ -21,7 +30,7 @@ De qualquer forma, é claro que as minhas escolhas metodológicas são guiadas p
 
 A metodologia será mais específica quando o objetivo for específico. Aulas de preparação para exame, por exemplo, serão voltadas principalmente à simulação de exames e suas capacidades específicas; preparação para entrevistas consistirá principalmente em simulação de entrevistas, com estudo do vocabulário e gramática adequados; etc.
 
-### Aulas online
+<h3 id="aulasonline">Aulas online</h3>
 
 Me iniciei com aulas online em 2015, ainda pelo Skype, e hoje atendo pelo Zoom, um programa voltado para aulas. Fui migrando aos poucos para o atendimento exclusivamente online, conforme os alunos antigos presenciais experimentaram e preferiram o método. Após meu último aluno presencial migrar para a aula online, passei a não mais assumir novos alunos presenciais.
 
@@ -43,7 +52,7 @@ No mais, com o tempo que você gastaria se deslocando até aqui, você pode cheg
 
 A aula online ainda oferece uma série de recursos interessantes: o compartilhamento rápido e fácil de tela (em que anotações podem ser feitas diretamente na tela), quadro branco, a possibilidade de gravar trechos das aulas para que o aluno possa se ouvir falando ou retornar a explicações específicas fora do horário da aula, etc. Todas as anotações feitas na tela ou no quadro branco ficam salvas e são compartilhadas após a aula, de modo que não é preciso interrompermos a aula para que o aluno faça anotações.
 
-### Como funciona a aula online?
+<h3 id="comofunciona">Como funciona a aula online?</h3>
 
 As aulas particulares online funcionam exatamente como aulas presenciais, pois não são gravações, mas encontros virtuais. O programa utilizado é o <b>Zoom</b>, que conta com quadro branco e compartilhamento de tela (com anotações) além da chamada de vídeo. 
 
@@ -86,6 +95,39 @@ Ao final de cada aula, você receberá seus quadros e/ou screenshots, então voc
 
 <b>O único porém da aula online é garantir que a sua conexão seja estável.</b> Não é comum atualmente que alunos tenham conexões tão instáveis que impossibilitem as aulas, mas pode acontecer. É possível que precisemos testar, pois alguns alunos apresentam problemas de conexão mesmo contratando bons planos de internet. Uma dica é estar sempre próximo ao roteador ou, se possível, utilizar um cabo de rede (é baratinho!), que costuma melhorar bastante a qualidade da conexão. Caso os problemas persistam, providenciar um roteador mais potente também pode ser uma saída — os roteadores cedidos pelas empresas não costumam ser excelentes.
 
-### Aula experimental
+<h3 id="aulaexperimental">Aula experimental</h3>
 
 Como é o caso da grande maioria dos serviços que contratamos, não há aula experimental. Minhas aulas são personalizadas e as metodologias otimizadas aos poucos. É impossível, então, oferecer a um aluno que não conheço uma demonstração de como seriam as aulas, pois isso não é decidido previamente. Sendo assim, o curso é pago desde o nosso primeiro encontro virtual.
+
+<h3 id="valores">Valores</h3>
+
+Valores para alunos ingressando em 2021:
+
+<div class="row">
+  <div class="col-sm-6" style='margin-bottom: 16px'>
+    <div class="card text-center">
+      <div class="card-header">
+        <big><b>Preparação para exames</b></big>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><big>R$100,00</big><small>/h</small></h3>
+        <p class="card-text">
+          Preparação para TOEFL, IELTS, etc., com foco nas habilidades específicas testadas em cada exame. Inclui correção de textos, avaliação de speaking, estratégias para reading e listening, e projeção de resultados.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6" style='margin-bottom: 16px'>
+    <div class="card text-center">
+      <div class="card-header">
+        <big><b>Demais aulas</b></big>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><big>R$90,00</big><small>/h</small></h3>
+        <p class="card-text">
+          Inclui nivelamento gratuito, compartilhamento de material, plano de estudos individual e personalizado de acordo com objetivos, interesses e perfil do aluno.
+        </p>
+      </div>
+    </div>
+  </div>
+</row>
