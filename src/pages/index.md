@@ -90,6 +90,20 @@ template: page
 
 ### Minha história
 
+<div style="width: 100%; display: flex; flex-direction: column; text-align-last: center">
+  <div style="width: 100%">
+    <div class="row">
+      <div class="col-md-6" style="padding: 10px">
+        <img src="../images/photo1.png" style="max-height: 300px;" />
+      </div>
+      <div class="col-md-6" style="padding: 10px">
+        <img src="../images/photo2.png" style="max-height: 300px;" />
+      </div>
+    </div>
+  </div>
+  <small style="margin: 20px; text-align: justify"><i>Toronto, Canadá - Brooklyn Bridge, New York</i></small>
+</div>
+
 Formei-me em Letras - Inglês pela UFMG em 2015, onde também concluí o Mestrado em Língua Inglesa, em 2019. Mas minha atuação como professora começou lá atrás, em 2011. Ao longo desses 9 anos, passei por renomadas escolas de inglês em Belo Horizonte, e também lecionei como estagiária através da UFMG nos cursos do CENEX e no programa federal Inglês sem Fronteiras. Sou grata por todas essas oportunidades, que contribuíram imensamente para minha capacitação. Mas em 2017, já com boa bagagem profissional, comecei a trilhar o que sabia ser o meu próprio caminho: aulas particulares para o público adulto.<p/>
 
 São muitas as vantagens da aula particular. Primeiramente, citaria a liberdade do professor em desenvolver um plano de estudos personalizado que irá garantir resultados. Também a relação que é desenvolvida com cada aluno ao longo das aulas torna o trabalho mais pessoal e humano, o que é fundamental para mim - fiz verdadeiros amigos ensinando inglês. No mais, minha diversificada experiência profissional me permitiu atestar, sem sombra de dúvidas, que alunos particulares aprendem mais rápido, melhor e com mais prazer. Tenho muita paixão pelo trabalho que faço porque acredito nele; não mais me frustro com as conhecidas desvantagens das escolas tradicionais de inglês. Como professora particular, sou livre para priorizar o ensino de qualidade.

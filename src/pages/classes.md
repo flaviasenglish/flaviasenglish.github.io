@@ -13,6 +13,7 @@ template: page
 </ul>
 
 <h3 id="metodo">Método</h3>
+
 Essa é quase sempre a primeira pergunta que recebo de alunos interessados: “qual seu método?” No entanto, cada aluno é uma combinação única de perfil de aprendizagem, objetivos com a língua, experiências prévias de estudo, interesses, personalidade, prazos. É impossível que um único método atenda a todos. Por isso, <b>não tenho um método fixo</b>: trabalho com uma variedade de abordagens e materiais (incluindo material próprio), acredito em metodologia flexível e aulas diversificadas.
 
 Os alunos preenchem um formulário antes do início das aulas, para que eu possa conhecê-los melhor e pensar em um plano inicial de estudos. Alunos que se identificam como falantes intermediários ou avançados fazem um teste de nivelamento gratuito para identificarmos as habilidades (fala, escuta, leitura e escrita) que necessitam maior atenção. O teste irá precisar o nível CEFR do aluno em cada habilidade. Ao longo do curso, os alunos são livres para opinar sobre as atividades selecionadas ou sugerir uma mudança de rota (por exemplo, caso uma nova demanda apareça, como um exame de proficiência, uma viagem ao exterior, etc.) Aos poucos nós vamos, em conjunto, ajustando as aulas às necessidades e interesses do aluno. Metodologias precisam fluir, porque a vida flui.

@@ -5,6 +5,8 @@ subtitle: >-
 template: page
 ---
 
+>"Eu super recomendo o trabalho da Flávia, pois a considero uma excelente professora. Além de estar me ensinando o idioma, ela me ensinou a gostar do processo de aprendizado, a gostar de estudar inglês, o que me parecia impossível antes de ser sua aluna. A Flávia é criativa na utilização dos diversos recursos de ensino e sempre procura abordar assuntos interessantes, que fazem o aluno querer interagir e buscar a comunicação. Com paciência e muita didática, ela vai deixando o aluno cada vez mais seguro e à vontade e quando menos se espera a gente já está conversando em inglês. Só tenho a agradecer a Flávia pelo meu  aprendizado." <cite>Adriana Mayer</cite>
+
 >"Quando contratei a Flávia tinha dúvida se uma professora tão qualificada seria a melhor opção para meu nível básico. Mas, paciente e habilidosa nas técnicas pedagógicas, mostrou ter muitos recursos inclusive para níveis iniciais como o meu. Há apenas 6 meses em aula, pude experimentar uma evolução inesperada. Muito grato a essa excelente profissional." <cite>Nilo Grego</cite>
 
 >"Excelente professora! Muito competente, tem domínio total da língua inglesa! Sempre busca adequar o conteúdo às necessidades do aluno e fazer as aulas da forma mais interessante possível! Sem dúvidas aulas particulares são o melhor custo benefício para se desenvolver no idioma e a Flávia é literalmente mestre nisso!" <cite>Daniel Conegundes</cite>
