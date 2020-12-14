@@ -1,9 +1,21 @@
 ---
-title: Avaliações
+title: Depoimentos
 subtitle: >-
-  Meu nome na praça
+  O que dizem sobre mim
 template: page
 ---
+
+>"Fiquei sabendo da Flavia atraves da minha sobrinha, e resolvi reiniciar meu estudo de ingles.
+Flavia e uma otima professora; entende muito o aluno, ajudando-o a enfrentar suas dificuldades.Tem uma excelente didatica e acompanha tudo,passo a passo, com dedicacao e compreensao. E paciente em suas explicacoes, que vao ao encontro das minhas necessidades, visando os meus objetivos!
+Me encanto a cada dia mais pelas suas aulas! Didatica excelente; com muita novidade... que nos incentiva ao aprendizado!" <cite>Maria do Rosario Brustolini</cite>
+
+>"Uma amiga que fala inglês muito bem me indicou a Flávia e eu amei. Gosto do método que é escolhido de acordo com a necessidade e perfil do aluno. Admiro seu conhecimento do idioma, gosto muito do material utilizado e o formato das aulas. Recomendo muito o trabalho dela!" <cite>Luana Melo</cite>
+
+>"Flávia é excelente tanto como professora quanto como tradutora. Pessoa sagaz, inteligente, pensa muito rápido; professora atenciosa, paciente, compreensiva. A tradutora preocupa-se muito com o trânsito dos textos, entre original e traduzido, (palavras, sentenças, ideias, conceitos), respeitando e valorizando a autoria e a recepção. Essa atenção minuciosa é o que faz com que suas traduções sejam as melhores. Será o dia em que a tradutora perderá para a professora, e é o caminho esperado; porém, não dispensaria a consultoria da profissional." <cite>Gustavo Tanus Cesário de Souza</cite>
+
+>"Flávia é uma professora muito competente, pois ela não só domina a língua como também possui uma didática eficiente e adaptável ao interesse e dificuldades do aluno.  Eu tinha interesse de melhorar a minha pronúncia e fluência na minha fala e relembrar algumas coisas da gramática. Não conheço professora com pronúncia e ouvido aos detalhes melhor que a dela, o que me ajudou muito na minha pronúncia. Tivemos aulas basicamente focadas em conversação, mas ela soube sempre trabalhar certos pontos da gramática, os quais ela percebia que eu tinha dificuldade. Ela teve muito boa didática ao me ensinar e soube preparar bem as aulas. Sem dúvida, o nível de inglês que atingi com a Flávia foi decisivo para eu conseguir meu doutorado na Alemanha, e que me ajuda diariamente aqui. Sou grato e só tenho à recomendar!" <cite>Rodrigo de Vasconcellos</cite>
+
+>"A Flávia é uma excelente professora! Super atenta ao aluno, ela consegue, por meio de uma aula tão leve quanto inteligente, nos fazer aprimorar todas as habilidades linguísticas. Ela nos incentiva e nos encoraja à expressão em língua inglesa ao mesmo tempo que cuida de consolidar essas habilidades com recursos variados de vocabulário, gramática, atividades interessantes, histórias... Recomendo demais fazer aula com a Flávia! <3" <cite>Lorena Lopes</cite>
 
 >"Meu primeiro contato com a Flávia foi ainda na época do Inglês sem Fronteiras, na UFMG. Desde então, não largo mais! rs Sempre que eu preciso de uma força com o inglês, é ela quem me salva. Em 2019, participei de um processo seletivo para bolsa de doutorado sanduíche na Austrália. Eu nunca tinha feito o TOEFL iBT até então. Flávia fez um milagre em poucas aulas online! As aulas são increvelmente dinâmicas, personalizadas, objetivas e produtivas. Obtive uma nota bem maior do que eu esperava, consegui a bolsa e passei 6 meses na Austrália. Essa experiência mudou minha vida e devo muito à Flávia por isso. Recentemente, fui pedir socorro novamente para me preparar para minha defesa de doutorado. Mais uma vez, em poucas aulas ela transformou minha apresentação em motivo de elogios. Sou só gratidão! Recomendo de olhos fechados!" <cite>Paula Debien</cite>
 
