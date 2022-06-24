@@ -111,7 +111,8 @@ Valores para alunos ingressando em 2021:
         <big><b>Preparação para exames</b></big>
       </div>
       <div class="card-body">
-        <h3 class="card-title"><big>R$100,00</big><small>/h</small></h3>
+        <h3 class="card-title"><big>R$ 120,00</big><small>/h</small></br>
+        <small>Apenas aulas individuais</small></h3>
         <p class="card-text">
           Preparação para TOEFL, IELTS, etc., com foco nas habilidades específicas testadas em cada exame. Inclui correção de textos, avaliação de speaking, estratégias para reading e listening, e projeção de resultados.
         </p>
@@ -124,7 +125,11 @@ Valores para alunos ingressando em 2021:
         <big><b>Demais aulas</b></big>
       </div>
       <div class="card-body">
-        <h3 class="card-title"><big>R$90,00</big><small>/h</small></h3>
+        <h3 class="card-title">
+          Individual: R$ 100,00<small>/h</small><br/>
+          Duplas: R$ 75 <small>/h por aluno</small><br/>
+          Grupos: R$ 60 <small>/h por aluno</small>
+        </h3>
         <p class="card-text">
           Inclui nivelamento gratuito, compartilhamento de material, plano de estudos individual e personalizado de acordo com objetivos, interesses e perfil do aluno.
         </p>

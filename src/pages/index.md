@@ -3,7 +3,7 @@ title: Sobre mim
 template: page
 ---
 
-### Serviços que ofereço
+### Meus serviços
 ##### <li> Aulas particulares online de inglês ao público adulto </li>
 
 <div class="paragrafo">Curso completo, conversação, inglês para viagens, inglês instrumental, preparação para exames (IELTS, TOEFL ITP e iBT, proficiência para pós-graduação, mobilidade acadêmica, FCE, CAE e PTE Academic)</div>
@@ -108,4 +108,4 @@ Formei-me em Letras - Inglês pela UFMG em 2015, onde também concluí o Mestrad
 
 São muitas as vantagens da aula particular. Primeiramente, citaria a liberdade do professor em desenvolver um plano de estudos personalizado que irá garantir resultados. Também a relação que é desenvolvida com cada aluno ao longo das aulas torna o trabalho mais pessoal e humano, o que é fundamental para mim - fiz verdadeiros amigos ensinando inglês. No mais, minha diversificada experiência profissional me permitiu atestar, sem sombra de dúvidas, que alunos particulares aprendem mais rápido, melhor e com mais prazer. Tenho muita paixão pelo trabalho que faço porque acredito nele; não mais me frustro com as conhecidas desvantagens das escolas tradicionais de inglês. Como professora particular, sou livre para priorizar o ensino de qualidade.
 
-Paralelamente, trabalho com tradução e revisão de textos. Fiz minha primeira tradução em 2013, um artigo acadêmico da área de ciências biológicas, e vi na tradução uma maneira de aperfeiçoar meu próprio conhecimento da língua inglesa. Desde então, traduzi e revisei dezenas de artigos, textos, cartas e e-mails, e estou sempre buscando novas oportunidades  nesta área, incluindo a legendagem de vídeos.
+Paralelamente, trabalho com tradução e revisão de textos. Fiz minha primeira tradução em 2013 e, desde então, traduzi e revisei dezenas de artigos, textos, cartas e e-mails.
