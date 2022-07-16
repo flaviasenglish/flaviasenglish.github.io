@@ -102,7 +102,7 @@ Como é o caso da grande maioria dos serviços que contratamos, não há aula ex
 
 <h3 id="valores">Valores</h3>
 
-Valores para alunos ingressando em 2021:
+Os valores a seguir se aplicam a alunos ingressando em 2022. <b>Não trabalho com "pacotes". Valores especiais se aplicam apenas às aulas em dupla ou grupos.</b>
 
 <div class="row">
   <div class="col-sm-6" style='margin-bottom: 16px'>
