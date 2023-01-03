@@ -1,0 +1,21 @@
+image: node:lts
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  before_script:
+    # Install packages
+    - npm install
+    - export NODE_ENV=production
+  script:
+    # Build application and move content to public folder
+    - npm run build-prod
+    - rm -rf public
+    - mv out public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

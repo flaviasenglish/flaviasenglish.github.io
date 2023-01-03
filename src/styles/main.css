@@ -1,0 +1,30 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+  font-family: "DidactGothic";
+  src: url("../../public/assets/fonts/DidactGothic-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../../public/assets/fonts/BarlowCondensed-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../../public/assets/fonts/Rubik.ttf");
+}
+
+@font-face {
+  font-family: "Megante";
+  src: url("../../public/assets/fonts/Megante.ttf");
+}
+
+@font-face {
+  font-family: "OPN";
+  src: url("../../public/assets/fonts/OPN.ttf");
+}
