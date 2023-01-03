@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 type IBackgroundProps = {
   children: ReactNode;
   color: string;
-  title: string;
+  title?: string;
   inverted?: boolean;
   id?: string;
 };

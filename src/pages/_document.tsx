@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <style jsx>
+        <style>
           {`
             .body::-webkit-scrollbar-track {
               border-radius: 0px;

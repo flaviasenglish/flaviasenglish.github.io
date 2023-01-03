@@ -1,4 +1,3 @@
-import { useTranslation } from 'next-export-i18n';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -10,7 +9,7 @@ type INavbarTwoColumnsProps = {
 const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
   const router = useRouter();
 
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   // const [query] = useLanguageQuery();
 
   const scrollToDiv = function (id: string) {
@@ -29,7 +28,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
           scrollToDiv('aboutme');
         }}
       >
-        <Link legacyBehavior href="#" shallow={true}>
+        <Link href="#" shallow={true}>
           <a>Sobre mim</a>
         </Link>
       </li>
@@ -38,7 +37,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
           scrollToDiv('services');
         }}
       >
-        <Link legacyBehavior href="#">
+        <Link href="#">
           <a
             onClick={() => {
               props.setOpen(!props.open);
@@ -53,7 +52,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
           scrollToDiv('testimonies');
         }}
       >
-        <Link legacyBehavior href="#">
+        <Link href="#">
           <a
             onClick={() => {
               props.setOpen(!props.open);
@@ -68,7 +67,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
           scrollToDiv('contact');
         }}
       >
-        <Link legacyBehavior href="#">
+        <Link href="#">
           <a
             onClick={() => {
               props.setOpen(!props.open);
@@ -95,7 +94,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
   return (
     <div className="flex justify-between flex-wrap items-center flex-grow">
       <div>
-        <Link legacyBehavior href="#">
+        <Link href="#">
           <a
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { useSelectedLanguage, useTranslation } from 'next-export-i18n';
-import { useRouter } from 'next/router';
+import { useSelectedLanguage } from 'next-export-i18n';
 import Carousel from 'react-multi-carousel';
 
 import { Background } from '../background/Background';
@@ -33,8 +32,8 @@ const responsive = {
 };
 
 const Base = () => {
-  const router = useRouter();
-  const { t } = useTranslation();
+  // const router = useRouter();
+  // const { t } = useTranslation();
   const { lang } = useSelectedLanguage();
   // const [query] = useLanguageQuery();
 
@@ -103,7 +102,7 @@ const Base = () => {
                   name: 'Cambridge CAE: GRADE A',
                   year: 2012,
                 },
-              ].map((certif, i) => (
+              ].map((certif) => (
                 <div className="rounded-3xl p-4 bg-background text-black shadow-md flex flex-col gap-1 uppercase">
                   <span className="material-icons text-center !text-6xl text-bg_orange-0">
                     workspace_premium

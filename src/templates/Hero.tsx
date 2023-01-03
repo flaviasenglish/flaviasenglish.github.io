@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { useTranslation } from 'next-export-i18n';
 import { useRouter } from 'next/router';
 
 import { Button } from '../button/Button';
@@ -13,7 +12,7 @@ const Hero = () => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(open);
 
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   // const [query] = useLanguageQuery();
 
   const setOpacity = (value: number = -1) => {

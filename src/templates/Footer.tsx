@@ -28,15 +28,12 @@ const Footer = () => {
           {t('top_contactus')}
         </div>
         <div className="text-lg text-center text-3xl flex flex-nowrap gap-8 justify-center mt-8">
-          <Link legacyBehavior href="mailto:flaviasenglish@gmail.com">
+          <Link href="mailto:flaviasenglish@gmail.com">
             <a target="_blank">
               <FontAwesomeIcon icon={faEnvelope} color={'white'} />
             </a>
           </Link>
-          <Link
-            legacyBehavior
-            href="https://www.linkedin.com/in/flavia-forcatho-83a53711a/"
-          >
+          <Link href="https://www.linkedin.com/in/flavia-forcatho-83a53711a/">
             <a target="_blank">
               <FontAwesomeIcon icon={faLinkedin} color={'white'} />
             </a>
