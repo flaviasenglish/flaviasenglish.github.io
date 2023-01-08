@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import { scrollToDiv as globalScrollToDiv } from '../globals';
+
 type INavbarTwoColumnsProps = {
   open: boolean;
   setOpen: (value: boolean) => void;
@@ -12,13 +14,9 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
   // const { t } = useTranslation();
   // const [query] = useLanguageQuery();
 
-  const scrollToDiv = function (id: string) {
-    const element = document?.getElementById(id);
-    if (element != null) {
-      const y = element.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-      props.setOpen(false);
-    }
+  const scrollToDiv = (id: string) => {
+    props.setOpen(false);
+    globalScrollToDiv(id);
   };
 
   const menuItems = (

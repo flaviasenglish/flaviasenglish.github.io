@@ -38,7 +38,7 @@ const Button = (props: IButtonProps) => {
           }
 
           .btn-primary:hover {
-            @apply bg-secondary-600;
+            @apply bg-[#5a72b9];
           }
 
           .btn-fullwidth {

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Button } from '../button/Button';
+import { scrollToDiv } from '../globals';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 
 const Hero = () => {
@@ -77,7 +79,11 @@ const Hero = () => {
                   Tradutora, revisora e professora particular de Inglês. Mestre
                   em Língua Inglesa pela UFMG.
                 </div>
-                <Button>Conheça os meus serviços</Button>
+                <Link href="#">
+                  <a onClick={() => scrollToDiv('services')}>
+                    <Button>Conheça os meus serviços</Button>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
