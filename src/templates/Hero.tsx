@@ -64,7 +64,7 @@ const Hero = () => {
       <div className="w-full flex-wrap items-center place-items-center overflow-hidden">
         <div className="w-full flex items-center max-h-screen h-screen overflow-hidden justify-center">
           <div className="bg-black h-[calc(100vh-160px)] lg:h-[calc(100vh-240px)] px-6 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-8 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
-            <div className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full">
+            <div className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full h-full">
               <div
                 style={{
                   backgroundImage: `url(${router.basePath}/assets/images/pic_clip.png)`,
@@ -85,7 +85,7 @@ const Hero = () => {
                   Tradutora, revisora e professora particular de Inglês. Mestre
                   em Língua Inglesa pela UFMG.
                 </div>
-                <Link href="#">
+                <Link href="#" shallow={true}>
                   <a onClick={() => scrollToDiv('services')}>
                     <Button>Conheça os meus serviços</Button>
                   </a>
