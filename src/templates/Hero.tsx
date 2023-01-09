@@ -63,16 +63,16 @@ const Hero = () => {
       </div>
       <div className="w-full flex-wrap items-center place-items-center overflow-hidden">
         <div className="w-full flex items-center max-h-screen h-screen overflow-hidden justify-center">
-          <div className="bg-black bg-opacity-0 py-8 absolute text-textprimary-100 z-10 flex p-4 gap-8 2xl:gap-32 w-full 2xl:w-3/4 items-center flex-col lg:flex-row">
+          <div className="bg-black bg-opacity-0 py-8 absolute text-textprimary-100 z-10 flex p-4 gap-8 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 items-center flex-col lg:flex-row">
             <div className="text-4xl lg:text-6xl text-primary-500 w-full self-start text-center lg:text-right">
               <img
                 src={`${router.basePath}/assets/images/pic_clip.png`}
-                className="2xl:w-full max-h-[40vh] sm:max-h-[50vh] mt-16 lg:mt-0 lg:max-h-full inline-block self-center lg:self-start drop-shadow-lg"
+                className="2xl:w-full max-h-[40vh] sm:max-h-[75vh] mt-16 lg:mt-0 2xl:max-h-full inline-block self-center lg:self-start drop-shadow-lg"
               />
             </div>
             <div className="w-full">
-              <div className="bg-white p-8 lg:p-14 rounded-[2rem] self-end drop-shadow-lg flex gap-2 lg:gap-4 flex-col items-center lg:items-start">
-                <div className="text-2xl md:text-3xl lg:text-4xl font-title uppercase tracking-wide">
+              <div className="bg-white p-8 2xl:p-14 rounded-[2rem] self-end drop-shadow-lg flex gap-2 lg:gap-4 flex-col items-center lg:items-start">
+                <div className="text-2xl md:text-3xl 2xl:text-4xl font-title uppercase tracking-wide">
                   O seu passaporte para a língua inglesa
                 </div>
                 <div className="text-gray-600 text-base md:text-xl lg:text-2xl text-justify mb-4">

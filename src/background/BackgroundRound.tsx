@@ -19,7 +19,10 @@ const BackgroundRound = (props: IBackgroundProps) => (
         : ''
     }`}
   >
-    <div className="font-title text-42xl font-bold mb-4">{props.title}</div>
+    {props.title && (
+      <div className="font-title font-bold mb-4">{props.title}</div>
+    )}
+
     {props.children}
   </div>
 );
