@@ -1,9 +1,12 @@
+import { MouseEventHandler } from 'react';
+
 import className from 'classnames';
 
 type IButtonProps = {
   xl?: boolean;
   fullWidth?: boolean;
   children: string;
+  onClick?: MouseEventHandler;
 };
 
 const Button = (props: IButtonProps) => {
@@ -16,7 +19,7 @@ const Button = (props: IButtonProps) => {
   });
 
   return (
-    <div className={btnClass}>
+    <div className={btnClass} onClick={props.onClick}>
       <div>{props.children}</div>
 
       <style jsx>

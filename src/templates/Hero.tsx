@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Button } from '../button/Button';
@@ -85,11 +84,9 @@ const Hero = () => {
                   Tradutora, revisora e professora particular de Inglês. Mestre
                   em Língua Inglesa pela UFMG.
                 </div>
-                <Link href="#" shallow={true}>
-                  <a onClick={() => scrollToDiv('services')}>
-                    <Button>Conheça os meus serviços</Button>
-                  </a>
-                </Link>
+                <Button onClick={() => scrollToDiv('services')}>
+                  Conheça os meus serviços
+                </Button>
               </div>
             </div>
           </div>
