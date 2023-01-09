@@ -10,7 +10,8 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <style>
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <style jsx>
           {`
             .body::-webkit-scrollbar-track {
               border-radius: 0px;
@@ -24,7 +25,7 @@ class MyDocument extends Document {
 
             .body::-webkit-scrollbar-thumb {
               @apply bg-bg_blue-0;
-              border-radius: 16px;
+              border-radius: 4px;
             }
           `}
         </style>

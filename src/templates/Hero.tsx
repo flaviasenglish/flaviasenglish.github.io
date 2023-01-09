@@ -63,14 +63,20 @@ const Hero = () => {
       </div>
       <div className="w-full flex-wrap items-center place-items-center overflow-hidden">
         <div className="w-full flex items-center max-h-screen h-screen overflow-hidden justify-center">
-          <div className="bg-black bg-opacity-0 py-8 absolute text-textprimary-100 z-10 flex p-4 gap-8 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 items-center flex-col lg:flex-row">
-            <div className="text-4xl lg:text-6xl text-primary-500 w-full self-start text-center lg:text-right">
-              <img
+          <div className="bg-black h-[calc(100vh-160px)] lg:h-[calc(100vh-240px)] px-6 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-8 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
+            <div className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full">
+              <div
+                style={{
+                  backgroundImage: `url(${router.basePath}/assets/images/pic_clip.png)`,
+                }}
+                className="w-full bg-no-repeat bg-center bg-contain h-full"
+              ></div>
+              {/* <img
                 src={`${router.basePath}/assets/images/pic_clip.png`}
-                className="2xl:w-full max-h-[40vh] sm:max-h-[75vh] mt-16 lg:mt-0 2xl:max-h-full inline-block self-center lg:self-start drop-shadow-lg"
-              />
+                className="mt-16 lg:mt-0 h-full 2xl:max-h-full inline-block self-center lg:self-start drop-shadow-lg"
+              /> */}
             </div>
-            <div className="w-full">
+            <div className="w-full self-center">
               <div className="bg-white p-8 2xl:p-14 rounded-[2rem] self-end drop-shadow-lg flex gap-2 lg:gap-4 flex-col items-center lg:items-start">
                 <div className="text-2xl md:text-3xl 2xl:text-4xl font-title uppercase tracking-wide">
                   O seu passaporte para a língua inglesa
