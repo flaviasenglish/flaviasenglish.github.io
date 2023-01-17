@@ -11,9 +11,7 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const fields = { fields: data };
-
+  const onSubmit = async (data: { [key: string]: string }) => {
     const mapping = {
       name: 'entry.1517429895',
       email: 'entry.378689295',
@@ -21,8 +19,6 @@ const Contact = () => {
       subject: 'entry.1801542905',
       message: 'entry.289170194',
     };
-
-    console.log(data);
 
     const form = document.createElement('form');
     form.method = 'POST';
@@ -33,7 +29,7 @@ const Contact = () => {
       const hiddenField = document.createElement('input');
       hiddenField.type = 'hidden';
       hiddenField.name = gKey;
-      hiddenField.value = data[key];
+      hiddenField.value = data[key || ''] || '';
 
       form.appendChild(hiddenField);
     });

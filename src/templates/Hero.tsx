@@ -122,7 +122,7 @@ const Hero = () => {
           >
             <span
               className="material-icons-round text-center !text-6xl text-bg_blue-0"
-              style={{ '-webkit-text-stroke': '2px' }}
+              style={{ WebkitTextStroke: '2px' }}
             >
               south
             </span>

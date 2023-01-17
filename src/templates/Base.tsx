@@ -35,7 +35,8 @@ const responsive = {
   },
 };
 
-const CustomDot = ({ onMove, index, onClick, active }) => {
+// @ts-ignore
+const CustomDot = ({ onClick, active }) => {
   return (
     <li
       className={`${
@@ -378,6 +379,7 @@ const Base = () => {
             pauseOnHover
             autoPlay
             renderButtonGroupOutside={true}
+            // @ts-ignore
             customDot={<CustomDot />}
             renderDotsOutside={true}
           >
