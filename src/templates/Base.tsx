@@ -43,7 +43,7 @@ const CustomDot = ({ onClick, active }) => {
         active ? 'active' : 'inactive'
       } w-[14px] h-[14px] bg-bg_blue-0 border-2 border-bg_blue-0 rounded-full m-1 ${
         active ? 'scale-150' : ''
-      }  cursor-pointer`}
+      }  cursor-pointer flex-shrink-0`}
       onClick={() => onClick()}
     ></li>
   );
@@ -369,7 +369,7 @@ const Base = () => {
         title={'DEPOIMENTOS'}
         id="testimonies"
       >
-        <div className="relative pb-12">
+        <div className="relative pb-20">
           <Carousel
             responsive={responsive}
             partialVisible={true}

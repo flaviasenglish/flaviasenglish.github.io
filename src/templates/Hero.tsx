@@ -62,7 +62,7 @@ const Hero = () => {
       </div>
       <div className="w-full flex-wrap items-center place-items-center overflow-hidden">
         <div className="w-full flex items-center max-h-screen h-full overflow-hidden justify-center">
-          <div className="bg-black h-[calc(95vh-160px)] lg:h-[calc(95vh-240px)] px-6 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-8 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
+          <div className="bg-black h-[calc(95vh-160px)] lg:h-[calc(95vh-240px)] px-4 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-1 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
             <div
               className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full h-full flex justify-center relative"
               style={{ transform: 'scale(0.8)' }}
@@ -102,11 +102,11 @@ const Hero = () => {
               </div>
             </div>
             <div className="w-full self-center">
-              <div className="bg-white p-8 2xl:p-14 rounded-[2rem] self-end drop-shadow-lg flex gap-2 lg:gap-4 flex-col items-center">
-                <div className="text-2xl md:text-3xl 2xl:text-4xl font-title uppercase tracking-wide text-center">
+              <div className="bg-white p-6 2xl:p-14 rounded-[2rem] self-end drop-shadow-lg flex gap-2 lg:gap-4 flex-col items-center">
+                <div className="text-xl md:text-3xl 2xl:text-4xl font-title uppercase tracking-wide text-center">
                   O seu passaporte para a língua inglesa
                 </div>
-                <div className="text-gray-600 text-base md:text-xl lg:text-2xl text-justify mb-4">
+                <div className="text-gray-600 text-base md:text-xl lg:text-2xl text-justify mb-2 lg:mb-4">
                   Tradutora, revisora e professora particular de Inglês. Mestre
                   em Língua Inglesa pela UFMG.
                 </div>
@@ -118,7 +118,7 @@ const Hero = () => {
           </div>
           <div
             onClick={() => scrollToDiv('aboutme')}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 drop-shadow-lg w-[80px] z-[1] cursor-pointer"
+            className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 drop-shadow-lg w-[80px] z-[1] cursor-pointer"
           >
             <span
               className="material-icons-round text-center !text-6xl text-bg_blue-0"

@@ -28,3 +28,9 @@
   font-family: "OPN";
   src: url("../../public/assets/fonts/OPN.ttf");
 }
+
+.react-multi-carousel-dot-list {
+  flex-wrap: wrap;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
