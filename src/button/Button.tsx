@@ -7,6 +7,7 @@ type IButtonProps = {
   fullWidth?: boolean;
   children: string;
   onClick?: MouseEventHandler;
+  secondary?: boolean;
 };
 
 const Button = (props: IButtonProps) => {
@@ -15,6 +16,7 @@ const Button = (props: IButtonProps) => {
     'btn-xl': props.xl,
     'btn-base': !props.xl,
     'btn-primary': true,
+    'btn-secondary': props.secondary,
     'btn-fullwidth': !!props.fullWidth,
   });
 

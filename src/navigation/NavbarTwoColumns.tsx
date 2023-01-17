@@ -47,6 +47,21 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
       </li>
       <li
         onClick={() => {
+          scrollToDiv('method');
+        }}
+      >
+        <Link href="#">
+          <a
+            onClick={() => {
+              props.setOpen(!props.open);
+            }}
+          >
+            Aulas
+          </a>
+        </Link>
+      </li>
+      <li
+        onClick={() => {
           scrollToDiv('testimonies');
         }}
       >
