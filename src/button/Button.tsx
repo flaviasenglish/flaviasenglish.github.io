@@ -31,7 +31,7 @@ const Button = (props: IButtonProps) => {
           }
 
           .btn-base {
-            @apply text-base md:text-lg py-3 px-6;
+            @apply text-sm md:text-lg py-3 px-6;
           }
 
           .btn-xl {
