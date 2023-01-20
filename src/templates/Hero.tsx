@@ -62,7 +62,7 @@ const Hero = () => {
       </div>
       <div className="w-full flex-wrap items-center place-items-center overflow-hidden">
         <div className="w-full flex items-center max-h-screen h-full overflow-hidden justify-center">
-          <div className="mt-[-80px] lg:mt-auto h-[calc(90vh-160px)] lg:h-[calc(95vh-240px)] px-4 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-1 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
+          <div className="mt-[-80px] lg:mt-[20px] h-[calc(90vh-160px)] xl:h-[calc(95vh-160px)] 2xl:h-[calc(95vh-240px)] px-4 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-1 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
             <div
               className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full h-full flex justify-center relative"
               style={{ transform: 'scale(0.8)' }}
@@ -118,7 +118,7 @@ const Hero = () => {
           </div>
           <div
             onClick={() => scrollToDiv('aboutme')}
-            className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 drop-shadow-lg w-[60px] h-[60px] md:w-[80px] md:h-[80px] z-[1] cursor-pointer bg-bg_blue-0 flex items-center justify-center rounded-full select-none"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 drop-shadow-lg w-[60px] h-[60px] md:w-[80px] md:h-[80px] z-[1] cursor-pointer bg-bg_blue-0 flex items-center justify-center rounded-full select-none"
           >
             <span
               className="material-icons-round text-center !text-4xl md:!text-5xl text-white"
