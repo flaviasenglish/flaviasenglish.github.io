@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useSelectedLanguage } from 'next-export-i18n';
-import { useRouter } from 'next/router';
 import Carousel from 'react-multi-carousel';
 
 import { Background } from '../background/Background';
@@ -50,7 +49,7 @@ const CustomDot = ({ onClick, active }) => {
 };
 
 const Base = () => {
-  const router = useRouter();
+  // const router = useRouter();
   // const { t } = useTranslation();
   const { lang } = useSelectedLanguage();
   // const [query] = useLanguageQuery();
