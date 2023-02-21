@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelectedLanguage } from 'next-export-i18n';
 import Carousel from 'react-multi-carousel';
 
@@ -8,13 +10,12 @@ import { BackgroundRound } from '../background/BackgroundRound';
 import { Meta } from '../layout/Meta';
 import { Section } from '../layout/Section';
 import { AppConfig } from '../utils/AppConfig';
+import useAnalyticsEventTracker from '../utils/useAnalyticsEventTracker';
 import { Contact } from './Contact';
 import { Footer } from './Footer';
 import { Hero } from './Hero';
 
 import 'react-multi-carousel/lib/styles.css';
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const responsive = {
   desktop: {
@@ -88,6 +89,7 @@ const Base = () => {
   // const { t } = useTranslation();
   const { lang } = useSelectedLanguage();
   // const [query] = useLanguageQuery();
+  const gaEventTracker = useAnalyticsEventTracker('Event');
 
   return (
     <div className="antialiased text-textprimary-300 bg-background-500 xl:text-lg">
@@ -155,7 +157,10 @@ const Base = () => {
                   year: 2012,
                 },
               ].map((certif) => (
-                <div className="rounded-3xl p-2 2xl:p-4 bg-background text-black shadow-md flex flex-col gap-1 uppercase">
+                <div
+                  className="rounded-3xl p-2 2xl:p-4 bg-background text-black shadow-md flex flex-col gap-1 uppercase"
+                  key={certif.name}
+                >
                   <span className="material-icons text-center !text-6xl text-bg_orange-0">
                     workspace_premium
                   </span>
@@ -207,7 +212,7 @@ const Base = () => {
                       types: [],
                     },
                   ].map((service) => (
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4" key={service.name}>
                       <div className="bg-bg_orange-0 rounded-full p-2 md:p-4 px-4 md:px-8 flex items-center text-white gap-4">
                         <span className="material-icons text-center !text-2xl md:text-3xl">
                           {service.icon}
@@ -287,14 +292,17 @@ const Base = () => {
                       ],
                     },
                   ].map((type) => (
-                    <>
+                    <div key={type.name}>
                       <div className="font-bold tracking-wider font-title text-center uppercase bg-bg_orange-0 text-white rounded-full p-2 md:p-4  text-md 2xl:text-lg">
                         {type.name}
                       </div>
                       <div className="px-2 md:px-4">{type.desc}</div>
                       <div className="flex gap-2 flex flex-col md:flex-row lg:flex-col xl:flex-row text-white center justify-center">
                         {type.types.map((subtype) => (
-                          <div className="bg-bg_orange-0 rounded-3xl flex flex-col items-center w-3/4 sm:w-1/2 lg:w-3/4 xl:w-1/2 self-center border-solid border-4 border-bg_orange-0 overflow-hidden h-full">
+                          <div
+                            key={subtype.name}
+                            className="bg-bg_orange-0 rounded-3xl flex flex-col items-center w-3/4 sm:w-1/2 lg:w-3/4 xl:w-1/2 self-center border-solid border-4 border-bg_orange-0 overflow-hidden h-full"
+                          >
                             <div className="font-bold text-lg justify-center font-title flex-grow text-center flex flex-col place-content-stretch uppercase p-1 md:p-2">
                               {subtype.name}
                               <div className="text-xs font-bold font-title -mt-1">
@@ -312,7 +320,7 @@ const Base = () => {
                           </div>
                         ))}
                       </div>
-                    </>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -509,7 +517,10 @@ const Base = () => {
                 name: 'Tales Cunha',
               },
             ].map((review) => (
-              <div className="bg-bg_blue-0 p-6 text-white p-8 rounded-3xl mx-4 flex flex-col items-center justify-center h-full gap-4 select-none">
+              <div
+                key={review.name}
+                className="bg-bg_blue-0 p-6 text-white p-8 rounded-3xl mx-4 flex flex-col items-center justify-center h-full gap-4 select-none"
+              >
                 <p className="italic text-justify">
                   <span className="material-icons text-center !text-2xl md:text-3xl">
                     format_quote
@@ -566,8 +577,12 @@ const Base = () => {
                   },
                 ].map((contact) => (
                   <a
+                    key={contact.name}
                     href={contact.url}
                     className="items-center border-solid border-4 p-2 px-6 rounded-full"
+                    onClick={() => gaEventTracker(`click-${contact.name}`)}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <div className="font-bold uppercase mb-2 flex gap-4 items-center">
                       <div className="material-icons text-center !text-4xl md:text-3xl">

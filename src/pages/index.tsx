@@ -1,11 +1,20 @@
+import { useEffect } from 'react';
+
 import { NextSeo } from 'next-seo';
+import ReactGA from 'react-ga';
 
 import { Base } from '../templates/Base';
 import { AppConfig } from '../utils/AppConfig';
 
 import 'material-icons/iconfont/material-icons.css';
 
+const TRACKING_ID = 'G-TZD56C8RT2'; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 const Index = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   // const { t } = useTranslation();
 
   return (
