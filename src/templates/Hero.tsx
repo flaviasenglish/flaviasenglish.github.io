@@ -62,16 +62,16 @@ const Hero = () => {
       </div>
       <div className="w-full flex-wrap items-center place-items-center overflow-hidden">
         <div className="w-full flex items-center max-h-screen h-full overflow-hidden justify-center">
-          <div className="mt-[-80px] lg:mt-[20px] h-[calc(90vh-160px)] xl:h-[calc(95vh-160px)] 2xl:h-[calc(95vh-240px)] px-4 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-1 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
+          <div className="pt-[60px] pb-[120px] lg:pt-0 lg:pb-0 lg:max-h-[calc(100%-120px)] h-auto max-h-full px-4 lg:px-0 items-stretch bg-opacity-0 absolute text-textprimary-100 z-10 flex gap-1 lg:gap-16 2xl:gap-32 w-full lg:w-10/12 2xl:w-3/4 flex-col lg:flex-row">
             <div
-              className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full h-full flex justify-center relative"
-              style={{ transform: 'scale(0.8)' }}
+              className="text-4xl lg:text-6xl text-primary-500 text-center lg:text-right w-full h-auto flex justify-center relative"
+              style={{ aspectRatio: '1 / 1' }}
             >
               <div
                 className="w-auto h-full bg-white over drop-shadow-lg absolute"
                 style={{
                   aspectRatio: '2.1 / 3.4',
-                  transform: 'translateX(40%) rotate(2deg)',
+                  transform: 'scale(0.8) translateX(45%) rotate(2deg)',
                 }}
               >
                 <div className="w-full h-full p-[7.5%] pb-[18.2%] pt-[8.5%]">
@@ -87,7 +87,7 @@ const Hero = () => {
                 className="w-auto h-full bg-white over drop-shadow-lg absolute"
                 style={{
                   aspectRatio: '2.1 / 3.4',
-                  transform: 'translateX(-40%) rotate(-10deg)',
+                  transform: 'scale(0.8) translateX(-35%) rotate(-10deg)',
                   zIndex: -1,
                 }}
               >
@@ -118,10 +118,10 @@ const Hero = () => {
           </div>
           <div
             onClick={() => scrollToDiv('aboutme')}
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 drop-shadow-lg w-[60px] h-[60px] md:w-[80px] md:h-[80px] z-[1] cursor-pointer bg-bg_blue-0 flex items-center justify-center rounded-full select-none"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 drop-shadow-lg w-[60px] h-[60px] xl:w-[70px] xl:h-[70px] z-[1] cursor-pointer bg-bg_blue-0 flex items-center justify-center rounded-full select-none"
           >
             <span
-              className="material-icons-round text-center !text-4xl md:!text-5xl text-white"
+              className="material-icons-round text-center !text-4xl xl:!text-4xl text-white"
               style={{ WebkitTextStroke: '2px' }}
             >
               south

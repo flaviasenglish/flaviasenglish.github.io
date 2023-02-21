@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelectedLanguage } from 'next-export-i18n';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Carousel from 'react-multi-carousel';
 
 import { Background } from '../background/Background';
@@ -50,13 +50,13 @@ const CustomDot = ({ onClick, active }) => {
 };
 
 const Base = () => {
-  // const router = useRouter();
+  const router = useRouter();
   // const { t } = useTranslation();
   const { lang } = useSelectedLanguage();
   // const [query] = useLanguageQuery();
 
   return (
-    <div className="antialiased text-textprimary-300 bg-background-500 2xl:text-lg">
+    <div className="antialiased text-textprimary-300 bg-background-500 xl:text-lg">
       <Meta
         title={AppConfig.title}
         description={AppConfig.description}
@@ -78,12 +78,12 @@ const Base = () => {
               programas. Sou grata por todas essas oportunidades, que
               contribuíram imensamente para minha capacitação. Mas em 2017, já
               com boa bagagem profissional, comecei a trilhar o que sabia ser o
-              meu próprio caminho: aulas particulares para o público adulto. Já
-              são dezenas de alunos particulares ao longo de todos esses anos, e
-              não tenho dúvidas de ter feito a escolha que melhor me permite
-              compartilhar o meu conhecimento. Desde 2013, atuo paralelamente na
-              tradução, revisão, transcrição e legendagem, tendo já trabalhado
-              com dezenas de documentos de diversos gêneros.{' '}
+              meu próprio caminho: tradução, revisão e aulas particulares para o
+              público adulto. Já são dezenas de alunos particulares ao longo de
+              todos esses anos, e não tenho dúvidas de ter feito a escolha que
+              melhor me permite compartilhar o meu conhecimento. Desde 2013,
+              atuo paralelamente na tradução, revisão, transcrição e legendagem,
+              tendo já trabalhado com dezenas de documentos de diversos gêneros.{' '}
               <b>
                 Meu objetivo é garantir que a língua inglesa deixe de ser um
                 problema na sua vida, e minha vocação é fazer isso com primor.
@@ -491,70 +491,68 @@ const Base = () => {
 
       <Section id="contact">
         <div className="bg-bg_orange-0 text-white shadow-md flex flex-col overflow-hidden rounded-[2rem] md:rounded-[4rem] p-8 md:p-8 2xl:p-16 ">
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="flex-grow-[1] w-full flex-shrink flex-1">
+          <div className="flex flex-col md:flex-row gap-16">
+            <div className="flex-grow-[2] w-full flex-shrink flex-1">
               <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
                 Contato
               </div>
-              <div className="flex flex-col gap-8">
-                <div>
-                  <div className="text-xl md:text-2xl font-title font-bold uppercase tracking-wider mb-2 flex gap-2 items-center">
-                    <span className="material-icons text-center !text-4xl md:text-3xl">
-                      phone_in_talk
-                    </span>
-                    Telefone
-                  </div>
-                  <p>
-                    <a href="tel:+351915204911">
-                      <span className="text-base">🇵🇹</span> +351 915 204 911
-                    </a>
-                  </p>
-                  <a href="https://wa.me/351915204911">
-                    <div>
-                      <span className="mr-2">
-                        <FontAwesomeIcon icon={faWhatsapp} color={'#075E54'} />
-                      </span>
-                      WhatsApp
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    icon: 'phone_in_talk',
+                    name: 'Telefone',
+                    value: (
+                      <div>
+                        <small className="mr-1 font-bold tracking-widest">
+                          PT
+                        </small>
+                        +351 915 204 911
+                      </div>
+                    ),
+                    url: 'tel:+351915204911',
+                  },
+                  {
+                    icon: <FontAwesomeIcon icon={faWhatsapp} color={'white'} />,
+                    name: 'WhatsApp',
+                    url: 'https://wa.me/351915204911',
+                  },
+                  {
+                    icon: 'mail',
+                    name: 'E-mail',
+                    value: <div>flaviasenglish@gmail.com</div>,
+                    url: 'mailto:flaviasenglish@gmail.com',
+                  },
+                  {
+                    icon: <FontAwesomeIcon icon={faLinkedin} color={'white'} />,
+                    name: 'LinkedIn',
+                    value: '',
+                    url: 'https://www.linkedin.com/in/flaviaforcatho/',
+                  },
+                ].map((contact) => (
+                  <a
+                    href={contact.url}
+                    className="items-center  bg-bg_blue-0 p-2 px-6 rounded-full"
+                  >
+                    <div className="font-bold uppercase mb-2 flex gap-4 items-center">
+                      <div className="material-icons text-center !text-4xl md:text-3xl">
+                        {contact.icon}
+                      </div>
+                      <div className="flex flex-col">
+                        <div className="tracking-widest text-2xl font-title mt-1">
+                          {contact.name}
+                        </div>
+                        {contact.value && (
+                          <div className="text-lg normal-case -mt-2 -mb-2 font-normal">
+                            {contact.value}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </a>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-title font-bold uppercase tracking-wider mb-2 flex gap-2 items-center">
-                    <span className="material-icons text-center !text-4xl md:text-3xl">
-                      mail
-                    </span>
-                    E-mail
-                  </div>
-                  <Link href="mailto:flaviasenglish@gmail.com">
-                    <a target="_blank">
-                      <span className="material-icons !text-base mr-2">
-                        send
-                      </span>
-                      flaviasenglish@gmail.com
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <div className="text-lg text-center text-3xl flex flex-nowrap gap-2 justify-left mt-10">
-                <Link href="mailto:flaviasenglish@gmail.com">
-                  <a target="_blank" className="flex">
-                    <div className="rounded-full bg-white p-1 flex items-center justify-center content-center w-[40px] h-[40px]">
-                      <span className="material-icons text-bg_orange-0 text-center !text-2xl">
-                        mail
-                      </span>
-                    </div>
-                  </a>
-                </Link>
-                <Link href="https://www.linkedin.com/in/flavia-forcatho-83a53711a/">
-                  <a target="_blank" className="flex">
-                    <div className="rounded-full bg-white p-1 flex items-center justify-center content-center w-[40px] h-[40px]">
-                      <FontAwesomeIcon icon={faLinkedin} color={'#f0826d'} />
-                    </div>
-                  </a>
-                </Link>
+                ))}
               </div>
             </div>
-            <div className="flex-grow-[2] w-full flex-shrink flex-1">
+            <div className="flex-grow-[3] w-full flex-shrink flex-1">
               <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
                 Envie uma mensagem
               </div>

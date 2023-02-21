@@ -115,7 +115,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
           >
             <img
               src={`${router.basePath}/assets/images/logo_top.png`}
-              className="h-10 lg:h-20"
+              className="h-10 2xl:h-20 2xl:py-2"
             />
           </a>
         </Link>
