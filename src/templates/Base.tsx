@@ -48,6 +48,41 @@ const CustomDot = ({ onClick, active }) => {
   );
 };
 
+// @ts-ignore
+const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
+  // @ts-ignore
+  const {
+    // @ts-ignore
+    carouselState: { currentSlide },
+  } = rest;
+  return (
+    <div className="carousel-button-group w-full absolute bottom-0 flex items-center invisible md:visible">
+      <button
+        className="absolute -translate-y-1/4 left-0 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
+        onClick={() => previous()}
+      >
+        <span
+          className="material-icons-round text-center !text-4xl xl:!text-4xl text-white"
+          style={{ WebkitTextStroke: '2px' }}
+        >
+          west
+        </span>
+      </button>
+      <button
+        className="absolute -translate-y-1/4 right-0 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
+        onClick={() => next()}
+      >
+        <span
+          className="material-icons-round text-center !text-4xl xl:!text-4xl text-white"
+          style={{ WebkitTextStroke: '2px' }}
+        >
+          east
+        </span>
+      </button>
+    </div>
+  );
+};
+
 const Base = () => {
   // const router = useRouter();
   // const { t } = useTranslation();
@@ -381,6 +416,8 @@ const Base = () => {
             // @ts-ignore
             customDot={<CustomDot />}
             renderDotsOutside={true}
+            // @ts-ignore
+            customButtonGroup={<CustomButtonGroup />}
           >
             {[
               {
@@ -530,7 +567,7 @@ const Base = () => {
                 ].map((contact) => (
                   <a
                     href={contact.url}
-                    className="items-center  bg-bg_blue-0 p-2 px-6 rounded-full"
+                    className="items-center border-solid border-4 p-2 px-6 rounded-full"
                   >
                     <div className="font-bold uppercase mb-2 flex gap-4 items-center">
                       <div className="material-icons text-center !text-4xl md:text-3xl">
