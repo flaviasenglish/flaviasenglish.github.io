@@ -58,7 +58,7 @@ const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
   return (
     <div className="carousel-button-group w-full absolute bottom-0 flex items-center invisible md:visible">
       <button
-        className="absolute -translate-y-1/4 left-0 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
+        className="absolute -translate-y-1/4 left-2 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
         onClick={() => previous()}
       >
         <span
@@ -69,7 +69,7 @@ const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
         </span>
       </button>
       <button
-        className="absolute -translate-y-1/4 right-0 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
+        className="absolute -translate-y-1/4 right-2 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
         onClick={() => next()}
       >
         <span
