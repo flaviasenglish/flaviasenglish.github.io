@@ -538,7 +538,7 @@ const Base = () => {
 
       <Section id="contact">
         <div className="bg-bg_orange-0 text-white shadow-md flex flex-col overflow-hidden rounded-[2rem] md:rounded-[4rem] p-8 md:p-8 2xl:p-16 ">
-          <div className="flex flex-col md:flex-row gap-16">
+          <div className="flex flex-col lg:flex-row gap-16">
             <div className="flex-grow-[2] w-full flex-shrink flex-1">
               <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
                 Contato
@@ -579,21 +579,21 @@ const Base = () => {
                   <a
                     key={contact.name}
                     href={contact.url}
-                    className="items-center border-solid border-4 border-white p-2 px-6 rounded-full"
+                    className="items-center border-solid border-4 border-white p-2 px-4 md:px-6 rounded-full"
                     onClick={() => gaEventTracker(`click-${contact.name}`)}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <div className="font-bold uppercase mb-2 flex gap-4 items-center">
+                    <div className="font-bold uppercase mb-2 flex gap-2 md:gap-4 items-center">
                       <div className="material-icons text-center !text-4xl md:text-3xl">
                         {contact.icon}
                       </div>
                       <div className="flex flex-col">
-                        <div className="tracking-widest text-2xl font-title mt-1">
+                        <div className="tracking-widest text-xl md:text-2xl font-title mt-1">
                           {contact.name}
                         </div>
                         {contact.value && (
-                          <div className="text-lg normal-case -mt-2 -mb-2 font-normal">
+                          <div className="text-base font-bold md:text-lg normal-case -mt-2 -mb-2">
                             {contact.value}
                           </div>
                         )}
