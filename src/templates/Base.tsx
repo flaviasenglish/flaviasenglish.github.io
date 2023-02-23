@@ -255,7 +255,7 @@ const Base = () => {
                 instrumental, preparação para exames (IELTS, TOEFL ITP e iBT,
                 proficiência para pós-graduação, mobilidade acadêmica, FCE, CAE
                 e PTE Academic).
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 lg:grid-flow-col grid-rows-[repeat(3,auto)]">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 lg:grid-flow-row grid-rows-[repeat(3,auto)]">
                   {[
                     {
                       name: 'Preparação para exames',
@@ -296,8 +296,8 @@ const Base = () => {
                       <div className="font-bold tracking-wider font-title text-center uppercase bg-bg_orange-0 text-white rounded-full p-2 md:p-4  text-md 2xl:text-lg">
                         {type.name}
                       </div>
-                      <div className="px-2 md:px-4">{type.desc}</div>
-                      <div className="flex gap-2 flex flex-col md:flex-row lg:flex-col xl:flex-row text-white center justify-center">
+                      <div className="px-2 md:px-4 my-4">{type.desc}</div>
+                      <div className="flex gap-2 flex-col md:flex-row lg:flex-col xl:flex-row text-white center justify-center">
                         {type.types.map((subtype) => (
                           <div
                             key={subtype.name}
@@ -579,7 +579,7 @@ const Base = () => {
                   <a
                     key={contact.name}
                     href={contact.url}
-                    className="items-center border-solid border-4 p-2 px-6 rounded-full"
+                    className="items-center border-solid border-4 border-white p-2 px-6 rounded-full"
                     onClick={() => gaEventTracker(`click-${contact.name}`)}
                     target="_blank"
                     rel="noreferrer"
