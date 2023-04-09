@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-export-i18n';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -11,7 +12,7 @@ type INavbarTwoColumnsProps = {
 const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
   const router = useRouter();
 
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   // const [query] = useLanguageQuery();
 
   const scrollToDiv = (id: string) => {
@@ -27,7 +28,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
         }}
       >
         <Link href="#" shallow={true}>
-          <a>Sobre mim</a>
+          <a>{t('header.about_me')}</a>
         </Link>
       </li>
       <li
@@ -41,7 +42,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
               props.setOpen(!props.open);
             }}
           >
-            Serviços
+            {t('header.services')}
           </a>
         </Link>
       </li>
@@ -56,7 +57,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
               props.setOpen(!props.open);
             }}
           >
-            Aulas
+            {t('header.method')}
           </a>
         </Link>
       </li>
@@ -71,7 +72,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
               props.setOpen(!props.open);
             }}
           >
-            Depoimentos
+            {t('header.testimonies')}
           </a>
         </Link>
       </li>
@@ -86,7 +87,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
               props.setOpen(!props.open);
             }}
           >
-            Contato
+            {t('header.contact')}
           </a>
         </Link>
       </li>

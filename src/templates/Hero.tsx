@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import { useTranslation } from 'next-export-i18n';
 import { useRouter } from 'next/router';
 
 import { Button } from '../button/Button';
@@ -13,7 +14,7 @@ const Hero = () => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(open);
 
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   // const [query] = useLanguageQuery();
 
   const setOpacity = (value: number = -1) => {
@@ -104,14 +105,13 @@ const Hero = () => {
             <div className="w-full self-center">
               <div className="bg-white p-6 2xl:p-14 rounded-[2rem] self-end drop-shadow-lg flex gap-2 lg:gap-4 flex-col items-center">
                 <div className="text-lg md:text-3xl 2xl:text-4xl font-title uppercase tracking-wide text-center">
-                  O seu passaporte para a língua inglesa
+                  {t('hero.title')}
                 </div>
                 <div className="text-gray-600 text-base md:text-xl lg:text-2xl text-justify mb-2 lg:mb-4">
-                  Tradutora, revisora e professora particular de Inglês. Mestre
-                  em Língua Inglesa pela UFMG.
+                  {t('hero.description')}
                 </div>
                 <Button onClick={() => scrollToDiv('services')}>
-                  Conheça os meus serviços
+                  {t('hero.learn_more')}
                 </Button>
               </div>
             </div>

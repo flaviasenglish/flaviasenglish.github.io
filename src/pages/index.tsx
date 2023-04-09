@@ -6,7 +6,7 @@ import { AppConfig } from '../utils/AppConfig';
 
 import 'material-icons/iconfont/material-icons.css';
 
-const TRACKING_ID = 'G-TZD56C8RT2'; // OUR_TRACKING_ID
+const TRACKING_ID = 'G-1XW09QDNP6'; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 
 const Index = () => {

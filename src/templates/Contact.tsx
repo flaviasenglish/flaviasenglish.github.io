@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useTranslation } from 'next-export-i18n';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '../button/Button';
@@ -10,6 +11,8 @@ const Contact = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { t } = useTranslation();
 
   const onSubmit = async (data: { [key: string]: string }) => {
     const mapping = {
@@ -48,7 +51,7 @@ const Contact = () => {
           className="block uppercase tracking-wide text-white-200 text-sm font-bold  text-left"
           htmlFor="grid-name"
         >
-          Nome
+          {t('contact.form.name')}
         </label>
         <input
           className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -61,7 +64,7 @@ const Contact = () => {
         />
         {errors.name && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Campo obrigatório
+            {t('contact.form.error.required_field')}
           </div>
         )}
       </div>
@@ -70,7 +73,7 @@ const Contact = () => {
           className="block uppercase tracking-wide text-white-200 text-sm font-bold "
           htmlFor="grid-email"
         >
-          E-mail
+          {t('contact.form.email')}
         </label>
         <input
           className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -82,15 +85,15 @@ const Contact = () => {
             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
           })}
         />
-        {errors.email?.type == 'required' && (
+        {errors.email?.type === 'required' && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Campo obrigatório
+            {t('contact.form.error.required_field')}
           </div>
         )}
 
-        {errors.email?.type == 'pattern' && (
+        {errors.email?.type === 'pattern' && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Digite um e-mail válido
+            {t('contact.form.error.type_valid_email')}
           </div>
         )}
       </div>
@@ -99,7 +102,7 @@ const Contact = () => {
           className="block uppercase tracking-wide text-white-200 text-sm font-bold "
           htmlFor="grid-phone"
         >
-          Telefone ou Whatsapp com DDD
+          {t('contact.form.phone')}
         </label>
         <input
           className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -111,14 +114,14 @@ const Contact = () => {
             pattern: /^(\+|\d)(0|[1-9]\d*)(\.\d+)?$/,
           })}
         />
-        {errors.phone?.type == 'required' && (
+        {errors.phone?.type === 'required' && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Campo obrigatório
+            {t('contact.form.error.required_field')}
           </div>
         )}
-        {errors.phone?.type == 'pattern' && (
+        {errors.phone?.type === 'pattern' && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Precisa ser um número
+            {t('contact.form.error.must_be_a_number')}
           </div>
         )}
       </div>
@@ -127,7 +130,7 @@ const Contact = () => {
           className="block uppercase tracking-wide text-white-200 text-sm font-bold "
           htmlFor="grid-subject"
         >
-          Assunto
+          {t('contact.form.subject')}
         </label>
         <div className="relative">
           <select
@@ -139,18 +142,18 @@ const Contact = () => {
             })}
           >
             <option value="" selected disabled>
-              Escolha um assunto
+              {t('contact.form.subjects.select_a_subject')}
             </option>
             <option value={'Tenho interesse em fazer aulas'}>
-              Tenho interesse em fazer aulas
+              {t('contact.form.subjects.classes')}
             </option>
             <option value={'Quero orçar uma tradução / revisão / transcrição'}>
-              Quero orçar uma tradução / revisão / transcrição
+              {t('contact.form.subjects.translation')}
             </option>
             <option value={'Já sou cliente e quero deixar uma avaliação'}>
-              Já sou cliente e quero deixar uma avaliação
+              {t('contact.form.subjects.review')}
             </option>
-            <option value={'Outro'}>Outro</option>
+            <option value={'Outro'}>{t('contact.form.subjects.other')}</option>
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-800">
             <svg
@@ -164,7 +167,7 @@ const Contact = () => {
         </div>
         {errors.subject && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Campo obrigatório
+            {t('contact.form.error.required_field')}
           </div>
         )}
       </div>
@@ -173,7 +176,7 @@ const Contact = () => {
           className="block uppercase tracking-wide text-white-200 text-sm font-bold "
           htmlFor="grid-message"
         >
-          Digite a sua mensagem. Seja específico!
+          {t('contact.form.message')}
         </label>
         <textarea
           className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -185,12 +188,12 @@ const Contact = () => {
         />
         {errors.message && (
           <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
-            Campo obrigatório
+            {t('contact.form.error.required_field')}
           </div>
         )}
       </div>
       <Button onClick={handleSubmit(onSubmit)} secondary fullWidth>
-        Enviar
+        {t('contact.form.send')}
       </Button>
     </form>
   );

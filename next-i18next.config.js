@@ -1,9 +1,9 @@
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'pt', 'es'],
+    locales: ['en', 'pt-BR', 'pt'],
     fallbackLng: ['en'],
-    useBrowserDefault: true,
-    reloadOnPrerender: true,
+    debug: true,
+    nonExplicitSupportedLngs: true,
   },
 };

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSelectedLanguage } from 'next-export-i18n';
+import i18n, { useSelectedLanguage, useTranslation } from 'next-export-i18n';
+import { useRouter } from 'next/router';
 import Carousel from 'react-multi-carousel';
 
+import countryToCurrency from '../../public/currency.json';
+import prices from '../../public/prices.json';
 import { Background } from '../background/Background';
 import { BackgroundRound } from '../background/BackgroundRound';
 import { Meta } from '../layout/Meta';
@@ -84,12 +87,52 @@ const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
   );
 };
 
+// @ts-ignore
+const getDefaultLanguage = (userI18n) => {
+  let browserLang = '';
+  if (
+    typeof window !== 'undefined' &&
+    window &&
+    window.navigator &&
+    (window.navigator.languages || window.navigator.language)
+  ) {
+    browserLang =
+      (window.navigator.languages && window.navigator.languages[0]) ||
+      window.navigator.language;
+  }
+  if (browserLang && userI18n.translations[browserLang]) {
+    return browserLang;
+  }
+  const fallback = browserLang.split('-').shift();
+  if (fallback && userI18n.translations[fallback]) {
+    return fallback;
+  }
+  return userI18n.defaultLang;
+};
+
 const Base = () => {
-  // const router = useRouter();
-  // const { t } = useTranslation();
+  const router = useRouter();
+  const i18nConfig = i18n();
+
+  useEffect(() => {
+    router.push(
+      {
+        pathname: router.pathname,
+        query: `lang=${getDefaultLanguage(i18nConfig)}`,
+      },
+      undefined
+    );
+  }, []);
+
+  const { t } = useTranslation();
   const { lang } = useSelectedLanguage();
   // const [query] = useLanguageQuery();
   const gaEventTracker = useAnalyticsEventTracker('Event');
+
+  // @ts-ignore
+  const currency = countryToCurrency[lang.split('-').pop().toUpperCase()];
+  // @ts-ignore
+  const price = prices[currency] || prices.EUR;
 
   return (
     <div className="antialiased text-textprimary-300 bg-background-500 xl:text-lg">
@@ -98,46 +141,31 @@ const Base = () => {
         description={AppConfig.description}
         language={lang}
       />
+
       <Hero />
       <BackgroundRound color="bg-bg_blue-0 text-white" id="aboutme">
         <div className="flex gap-8 lg:gap-16 2xl:gap-16 flex-col lg:flex-row">
           <div className="w-full">
             <div className="text-2xl md:text-3xl font-title mb-4 uppercase tracking-wider">
-              Minha história
+              {t('about_me.my_story')}
             </div>
-            <p className="text-justify">
-              Apaixonada pela língua inglesa desde a infância, formei-me em
-              Letras - Inglês pela UFMG em 2015, onde também concluí o Mestrado
-              em Língua Inglesa em 2019. Minha atuação como professora começou
-              em 2011. Ao longo desses 11 anos, passei por renomadas escolas de
-              inglês e também lecionei como estagiária na UFMG em diferentes
-              programas. Sou grata por todas essas oportunidades, que
-              contribuíram imensamente para minha capacitação. Mas em 2017, já
-              com boa bagagem profissional, comecei a trilhar o que sabia ser o
-              meu próprio caminho: tradução, revisão e aulas particulares para o
-              público adulto. Já são dezenas de alunos particulares ao longo de
-              todos esses anos, e não tenho dúvidas de ter feito a escolha que
-              melhor me permite compartilhar o meu conhecimento. Desde 2013,
-              atuo paralelamente na tradução, revisão, transcrição e legendagem,
-              tendo já trabalhado com dezenas de documentos de diversos gêneros.{' '}
-              <b>
-                Meu objetivo é garantir que a língua inglesa deixe de ser um
-                problema na sua vida, e minha vocação é fazer isso com primor.
-              </b>
-            </p>
+            <p
+              className="text-justify"
+              dangerouslySetInnerHTML={{ __html: t('about_me.my_story_text') }}
+            ></p>
           </div>
           <div className="w-full">
             <div className="text-2xl md:text-3xl font-title mb-4 uppercase tracking-wider">
-              Certificações
+              {t('about_me.certificates_title')}
             </div>
             <div className="grid grid-cols-2 gap-2 2xl:gap-8 auto-rows-fr">
               {[
                 {
-                  name: 'Mestrado em Língua Inglesa (UFMG)',
+                  name: t('about_me.certificates.masters_ufmg'),
                   year: 2019,
                 },
                 {
-                  name: 'TOEFL iBT: 118/120',
+                  name: t('about_me.certificates.toefl'),
                   year: 2019,
                 },
                 {
@@ -145,7 +173,7 @@ const Base = () => {
                   year: 2016,
                 },
                 {
-                  name: 'Graduação em Letras - Inglês (UFMG)',
+                  name: t('about_me.certificates.graduation'),
                   year: 2015,
                 },
                 {
@@ -179,7 +207,7 @@ const Base = () => {
         </div>
       </BackgroundRound>
       <Background color="">
-        <Section title={'Serviços'} id={'services'}>
+        <Section title={t('services.title')} id={'services'}>
           <div className="flex flex-col gap-8">
             <div className="rounded-3xl bg-bg_white-0 text-white shadow-md flex flex-col overflow-hidden">
               <div className="flex gap-4 items-center bg-bg_orange-0 p-3 2xl:p-4 px-6 2xl:px-8">
@@ -187,27 +215,27 @@ const Base = () => {
                   article
                 </span>
                 <div className="text-xl 2xl:text-2xl font-title font-bold text-center uppercase tracking-wider">
-                  Trabalhos com textos
+                  {t('services.text.title')}
                 </div>
               </div>
               <div className="p-4 md:p-8 text-black gap-8 flex-col flex">
                 <div className="grid grid-cols-1 gap-6">
                   {[
                     {
-                      name: 'Tradução',
-                      desc: 'Traduzo trabalhos acadêmicos, livros, vídeos, áudios, cartas, email, cardápios, websites, etc. Inglês → Português e Português → Inglês. Não sou tradutora juramentada, portanto não traduzo documentos oficiais. Para tradução juramentada, procure a Junta Comercial do seu estado.',
+                      name: t('services.text.translation'),
+                      desc: t('services.text.translation_desc'),
                       icon: 'translate',
                       types: [],
                     },
                     {
-                      name: 'Revisão',
-                      desc: 'Reviso textos em inglês: trabalhos acadêmicos, livros, scripts, cartas, emails, cardápios, websites, etc. Não reviso textos em português.',
+                      name: t('services.text.revision'),
+                      desc: t('services.text.revision_desc'),
                       icon: 'edit_note',
                       types: [],
                     },
                     {
-                      name: 'Legendagem',
-                      desc: 'Faço transcrição de áudios e vídeos em inglês. Faço legendagem de vídeos em inglês, com legendas em inglês e/ou em português.  Faço legendagem de vídeos em português com legenda em inglês.',
+                      name: t('services.text.subtitle'),
+                      desc: t('services.text.subtitle_desc'),
                       icon: 'closed_caption',
                       types: [],
                     },
@@ -229,14 +257,10 @@ const Base = () => {
                 </div>
                 <div className="bg-bg_orange-0 rounded-3xl items-center border-solid border-4 border-bg_orange-0 overflow-hidden">
                   <div className="font-bold text-md 2xl:text-lg font-title flex-grow text-center flex flex-col place-content-center uppercase p-2 text-white">
-                    Orçamento
+                    {t('services.text.budget_title')}
                   </div>
                   <div className="flex bg-bg_white-0 w-full text-textprimary p-2 md:p-4 px-4 md:px-8 tracking-normal text-justify">
-                    O orçamento dos serviços de tradução e revisão consideram a
-                    extensão do material original, o nível de especificidade, e
-                    o prazo. Para fazer um orçamento, basta entrar em contato
-                    pelo flaviasenglish@gmail.com, anexando o texto a ser orçado
-                    e especificando o prazo pretendido.
+                    {t('services.text.budget_text')}
                   </div>
                 </div>
               </div>
@@ -247,46 +271,43 @@ const Base = () => {
                   cast_for_education
                 </span>
                 <div className="text-xl md:text-2xl font-title font-bold text-center uppercase tracking-wider">
-                  Aulas particulares de inglês
+                  {t('services.classes.title')}
                 </div>
               </div>
               <div className="p-4 md:p-8 text-black gap-8 flex-col flex text-justify">
-                Curso completo, conversação, inglês para viagens, inglês
-                instrumental, preparação para exames (IELTS, TOEFL ITP e iBT,
-                proficiência para pós-graduação, mobilidade acadêmica, FCE, CAE
-                e PTE Academic).
+                {t('services.classes.desc')}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 lg:grid-flow-row grid-rows-[repeat(3,auto)]">
                   {[
                     {
-                      name: 'Preparação para exames',
-                      desc: 'Preparação para TOEFL, IELTS, etc., com foco nas habilidades específicas testadas em cada exame. Inclui correção de textos, avaliação de speaking, estratégias para reading e listening, e projeção de resultados.',
+                      name: t('services.classes.exam_title'),
+                      desc: t('services.classes.exam_desc'),
                       types: [
                         {
-                          name: 'Individual',
-                          price: '120',
+                          name: t('services.classes.exam_individual'),
+                          price: price.exam,
                           metric: '/h',
                         },
                       ],
                     },
                     {
-                      name: 'Demais aulas',
-                      desc: 'Inclui nivelamento gratuito, compartilhamento de material, plano de estudos individual e personalizado de acordo com objetivos, interesses e perfil do aluno.',
+                      name: t('services.classes.classes_title'),
+                      desc: t('services.classes.classes_desc'),
                       types: [
                         {
-                          name: 'Individual',
-                          price: '100',
+                          name: t('services.classes.classes_individual'),
+                          price: price.one,
                           metric: '/h',
                         },
                         {
-                          name: 'Duplas',
-                          subname: 'por aluno',
-                          price: '75',
+                          name: t('services.classes.classes_double'),
+                          subname: t('services.classes.classes_per_student'),
+                          price: price.two,
                           metric: '/h',
                         },
                         {
-                          name: 'Grupos',
-                          subname: 'por aluno',
-                          price: '60',
+                          name: t('services.classes.classes_group'),
+                          subname: t('services.classes.classes_per_student'),
+                          price: price.group,
                           metric: '/h',
                         },
                       ],
@@ -311,9 +332,12 @@ const Base = () => {
                             </div>
                             <div className="flex self-center text-center justify-center bg-bg_white-0 w-full text-textprimary p-1 md:p-2 tracking-normal">
                               <div className="text-2xl md:text-3xl">
-                                R${subtype.price}
+                                {String(price.format).replace(
+                                  '{0}',
+                                  subtype.price
+                                )}
                               </div>
-                              <div className="self-end text-base">
+                              <div className="self-end text-md">
                                 {subtype.metric}
                               </div>
                             </div>
@@ -336,79 +360,34 @@ const Base = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-16 text-justify">
           <div className="lg:col-span-2">
             <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
-              Método
+              {t('method.title')}
             </div>
-            <p>
-              Essa é quase sempre a primeira pergunta que recebo de alunos
-              interessados: “qual seu método?” No entanto, cada aluno é uma
-              combinação única de perfil de aprendizagem, objetivos com a
-              língua, experiências prévias de estudo, interesses, personalidade,
-              prazos. É impossível que um único método atenda a todos. Por isso,
-              <b>não tenho um método fixo</b>: trabalho com uma variedade de
-              abordagens e materiais (incluindo material próprio), acredito em
-              metodologia flexível e aulas diversificadas.
-            </p>
-            <p>
-              Os alunos preenchem um formulário antes do início das aulas, para
-              que eu possa conhecê-los melhor e pensar em um plano inicial de
-              estudos. Alunos que se identificam como falantes intermediários ou
-              avançados fazem um teste de nivelamento gratuito para
-              identificarmos as habilidades (fala, escuta, leitura e escrita)
-              que necessitam maior atenção. O teste irá precisar o nível CEFR do
-              aluno em cada habilidade. Ao longo do curso, os alunos são livres
-              para opinar sobre as atividades selecionadas ou sugerir uma
-              mudança de rota (por exemplo, caso uma nova demanda apareça, como
-              um exame de proficiência, uma viagem ao exterior, etc.) Aos poucos
-              nós vamos, em conjunto, ajustando as aulas às necessidades e
-              interesses do aluno. Metodologias precisam fluir, porque a vida
-              flui.
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t('method.desc_1') }}></p>
+            <p dangerouslySetInnerHTML={{ __html: t('method.desc_2') }}></p>
           </div>
           <div className="">
             <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
-              Aulas online
+              {t('method.online_classes_title')}
             </div>
-            <p>
-              Como trabalho com atendimento online desde 2015, tenho muita
-              experiência em tornar a aula online o mais prática e imersiva
-              possível. Utilizo o Zoom, um programa voltado para aulas, em
-              conjunto com várias outras ferramentas virtuais, para proporcionar
-              uma aula interativa, dinâmica e completa. Todas as anotações
-              feitas em aula são enviadas depois ao aluno, juntamente com o
-              material, para que a sua preocupação seja apenas o aprendizado. 😊
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: t('method.online_classes') }}
+            ></p>
           </div>
           <div className="">
             <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
-              Aulas particulares
+              {t('method.individual_classes_title')}
             </div>
-            <p>
-              São muitas as vantagens da aula particular. Primeiramente, citaria
-              a liberdade do professor em desenvolver um{' '}
-              <b>plano de estudos personalizado</b> que garante resultados.
-              Também a relação que é desenvolvida com cada aluno ao longo das
-              aulas torna o trabalho mais pessoal e humano, o que é fundamental
-              para mim - fiz verdadeiros amigos ensinando inglês. No mais, minha
-              diversificada experiência profissional me permitiu atestar, sem
-              sombra de dúvidas, que{' '}
-              <b>
-                alunos particulares aprendem mais rápido, melhor e com mais
-                prazer.
-              </b>{' '}
-              Tenho muita paixão pelo trabalho que faço porque acredito nele;
-              não mais me frustro com as conhecidas desvantagens das escolas
-              tradicionais de inglês.{' '}
-              <b>
-                Como professora particular, sou livre para priorizar o ensino de
-                qualidade.
-              </b>
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t('method.individual_classes'),
+              }}
+            ></p>
           </div>
         </div>
       </BackgroundRound>
       <Section
         className="px-0 md:px-[unset]"
-        title={'DEPOIMENTOS'}
+        title={t('testimonials.title')}
         id="testimonies"
       >
         <div className="relative pb-20">
@@ -541,13 +520,13 @@ const Base = () => {
           <div className="flex flex-col lg:flex-row gap-16">
             <div className="flex-grow-[2] w-full flex-shrink flex-1">
               <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
-                Contato
+                {t('contact.title')}
               </div>
               <div className="flex flex-col gap-4">
                 {[
                   {
                     icon: 'phone_in_talk',
-                    name: 'Telefone',
+                    name: t('contact.phone'),
                     value: (
                       <div>
                         <small className="mr-1 font-bold tracking-widest">
@@ -605,7 +584,7 @@ const Base = () => {
             </div>
             <div className="flex-grow-[3] w-full flex-shrink flex-1">
               <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
-                Envie uma mensagem
+                {t('contact.send_a_message')}
               </div>
               <Contact />
             </div>
