@@ -260,7 +260,11 @@ const Base = () => {
                     {t('services.text.budget_title')}
                   </div>
                   <div className="flex bg-bg_white-0 w-full text-textprimary p-2 md:p-4 px-4 md:px-8 tracking-normal text-justify">
-                    {t('services.text.budget_text')}
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: t('services.text.budget_text'),
+                      }}
+                    ></p>
                   </div>
                 </div>
               </div>
