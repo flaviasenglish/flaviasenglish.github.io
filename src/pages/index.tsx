@@ -17,28 +17,28 @@ const Index = () => {
       <NextSeo
         title={AppConfig.site_name}
         description={``}
-        canonical="https://www.flaviaforcatho.com.br"
+        canonical="https://www.flaviaforcatho.com"
         openGraph={{
-          url: 'https://www.flaviaforcatho.com.br/',
+          url: 'https://www.flaviaforcatho.com/',
           title: AppConfig.site_name,
           description: ``,
           images: [
             {
-              url: `https://www.flaviaforcatho.com.br/logo_1024.png`,
+              url: `https://www.flaviaforcatho.com/logo_1024.png`,
               width: 1024,
               height: 1024,
               alt: 'Flávia Forcatho English Solutions',
               type: 'image/png',
             },
             {
-              url: `https://www.flaviaforcatho.com.br//logo_256.png`,
+              url: `https://www.flaviaforcatho.com//logo_256.png`,
               width: 256,
               height: 256,
               alt: 'Flávia Forcatho English Solutions',
               type: 'image/png',
             },
             {
-              url: `https://www.flaviaforcatho.com.br/logo_tt.png`,
+              url: `https://www.flaviaforcatho.com/logo_tt.png`,
               width: 1200,
               height: 630,
               alt: 'Flávia Forcatho English Solutions',
@@ -48,7 +48,7 @@ const Index = () => {
           site_name: AppConfig.description,
         }}
         twitter={{
-          site: 'https://www.flaviaforcatho.com.br/',
+          site: 'https://www.flaviaforcatho.com/',
           cardType: 'summary_large_image',
         }}
       />
