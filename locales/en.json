@@ -8,15 +8,15 @@
   },
   "hero": {
     "title": "Your passport to the English language",
-    "description": "Translator, proofreader and private English teacher. Master's degree in English Language from UFMG.",
+    "description": "Translator, proofreader and private English teacher. Master's degree in English from UFMG.",
     "learn_more": "Learn more about my services"
   },
   "about_me": {
     "my_story": "My story",
-    "my_story_text": "Passionate about the English language since childhood, I graduated in English Language and Literature from UFMG in 2015, where I also completed a Master's degree in English Language in 2019. My career as a teacher started in 2011. Throughout these 11 years, I have worked in renowned English schools and also taught as an intern at UFMG in different programs. I am grateful for all these opportunities, which have greatly contributed to my training. But in 2017, already with a good professional background, I began to pursue what I knew was my own path: translation, proofreading, and private lessons for adult audiences. I have had dozens of private students over all these years, and I have no doubt that I made the choice that best allows me to share my knowledge. Since 2013, I have also worked in translation, proofreading, transcription, and subtitling, having already worked with dozens of documents of various genres. <b>My goal is to ensure that the English language is no longer a problem in your life, and my vocation is to do this with excellence.</b>",
+    "my_story_text": "Passionate about the English language since childhood, I graduated in English Language and Literature from UFMG in 2015, where I also completed a Master's degree in English Language in 2019. My career as a teacher started in 2011. Throughout these 11 years, I have worked in renowned English schools and also taught as an intern at UFMG in different programs. I am grateful for all these opportunities, which have greatly contributed to my training. But in 2017, already with a good professional background, I began to pursue what I knew was my own path: translation, proofreading, and private lessons for adult learners. I have had dozens of private students over all these years, and I have no doubt that I made the choice that best allows me to share my knowledge. Since 2013, I have also worked in translation, proofreading, transcription, and subtitling, having already worked with dozens of documents of various genres. <b>My goal is to ensure that the English language is no longer a problem in your life, and my vocation is to do this with excellence.</b>",
     "certificates_title": "Certifications",
     "certificates": {
-      "masters_ufmg": "Master's Degree in English Language (UFMG)",
+      "masters_ufmg": "Master's Degree in English (UFMG)",
       "toefl": "TOEFL iBT: 118/120",
       "graduation": "Graduation in English Language and Literature (UFMG)"
     }
@@ -32,30 +32,30 @@
       "subtitle": "Subtitling",
       "subtitle_desc": "I transcribe audios and videos in English. I subtitle English videos, with subtitles in English and/or Portuguese. I subtitle Portuguese videos with English subtitles.",
       "budget_title": "Budget",
-      "budget_text": "The budget for translation and proofreading services takes into account the length of the original material, the level of specificity, and the deadline. To request a budget, simply contact me at flaviasenglish@gmail.com, attaching the text to be budgeted and specifying the desired deadline."
+      "budget_text": "The budget for translation and proofreading services takes into account the length of the original material, the level of specificity, and the deadline. To request a budget, simply contact me at <b><a href='mailto:flaviasenglish@gmail.com'>flaviasenglish@gmail.com</a></b>, attaching the text to be budgeted and specifying the desired deadline."
     },
     "classes": {
       "title": "Private English Lessons",
       "desc": "Complete course, conversation, English for travel, instrumental English, exam preparation (IELTS, TOEFL ITP and iBT, proficiency for graduate studies, academic mobility, FCE, CAE and PTE Academic).",
       "exam_title": "Exam Preparation",
       "exam_desc": "Preparation for TOEFL, IELTS, etc., focusing on specific skills tested in each exam. Includes text correction, speaking evaluation, strategies for reading and listening, and result projection.",
-      "exam_individual": "Individual",
+      "exam_individual": "Private",
       "classes_title": "Other Lessons",
-      "classes_desc": "Includes free leveling, sharing of material, individual and personalized study plan according to the student's objectives, interests, and profile.",
-      "classes_individual": "Individual",
-      "classes_double": "Doubles",
+      "classes_desc": "Includes free placement test, sharing of material, individual and personalized study plan according to the student's objectives, interests, and profile.",
+      "classes_individual": "Private",
+      "classes_double": "Pairs",
       "classes_group": "Groups",
       "classes_per_student": "per student"
     }
   },
   "method": {
     "title": "Method",
-    "desc_1": "This is almost always the first question I receive from interested students: 'what is your method?' However, each student is a unique combination of learning profile, language goals, previous study experiences, interests, personality, and timelines. It is impossible for a single method to meet everyone's needs. That's why I <b>don't have a fixed method</b>: I work with a variety of approaches and materials (including my own materials), believe in flexible methodology, and diversified lessons.",
-    "desc_2": "Students fill out a form before the start of classes so that I can get to know them better and create an initial study plan. Students who identify themselves as intermediate or advanced speakers take a free leveling test to identify the skills (speaking, listening, reading, and writing) that need more attention. The test will determine the student's CEFR level for each skill. Throughout the course, students are free to give their opinions about the selected activities or suggest a change of course (for example, if a new demand arises, such as a proficiency exam or a trip abroad, etc.) Little by little, we adjust the lessons together to meet the student's needs and interests. Methodologies need to flow because life flows.",
+    "desc_1": "This is almost always the first question I receive from interested students: 'what is your method?' However, each student is a unique combination of learning profile, language goals, previous study experiences, interests, personality, and deadlines. It is impossible for a single method to meet everyone's needs. That's why I <b>don't have a fixed method</b>: I work with a variety of approaches and materials (including my own materials), believe in flexible methodology, and diversified lessons.",
+    "desc_2": "Students fill out a form before the start of classes so that I can get to know them better and create an initial study plan. Students who identify themselves as intermediate or advanced speakers take a free placement test to identify the skills (speaking, listening, reading, and writing) that need more attention. The test will determine the student's CEFR level for each skill. Throughout the course, students are free to give their opinions about the selected activities or suggest a change of course (for example, if a new demand arises, such as a proficiency exam or a trip abroad, etc.) Little by little, we adjust the lessons together to meet the student's needs and interests. Methodologies need to flow because life flows.",
     "online_classes_title": "Online classes",
-    "online_classes": "As I have been working with online teaching since 2015, I have a lot of experience in making the online class as practical and immersive as possible. I use Zoom, a program designed for classes, in conjunction with various other virtual tools to provide an interactive, dynamic, and complete class. All notes made in class are sent to the student afterwards, along with the materials, so that their only concern is learning. 😊",
+    "online_classes": "As I have been working with online teaching since 2015, I have a lot of experience in making the online class as practical and immersive as possible. I use Zoom, a program designed for classes, together with various other virtual tools to provide an interactive, dynamic, and complete class. All notes made in class are sent to the student afterwards, along with the materials, so that their only concern is learning. 😊",
     "individual_classes_title": "Private classes",
-    "individual_classes": "There are many advantages to private lessons. First of all, I would mention the freedom the teacher has to develop a <b>custom study plan</b> that guarantees results. Also, the relationship developed with each student throughout the lessons makes the work more personal and human, which is essential for me - I have made true friends teaching English. Furthermore, my diverse professional experience has allowed me to attest, without a doubt, that <b>private students learn faster, better and with more pleasure.</b> I have a lot of passion for the work I do because I believe in it; I am no longer frustrated with the well-known disadvantages of traditional English schools. <b>As a private teacher, I am free to prioritize quality teaching.</b>"
+    "individual_classes": "There are many advantages to private lessons. First of all, I would mention the freedom the teacher has to develop a <b>custom study plan</b> that guarantees results. Also, the relationship developed with each student throughout the lessons makes the work more personal and human, which is essential for me - I have made true friends teaching English. Furthermore, my diverse professional experience has allowed me to attest, without a doubt, that <b>private students learn faster, better and with more pleasure.</b> I am passionate about the work I do because I believe in it; I am no longer frustrated with the well-known disadvantages of traditional English schools. <b>As a private teacher, I am free to prioritize quality teaching.</b>"
   },
   "testimonials": {
     "title": "TESTIMONIALS"
