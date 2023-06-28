@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 import i18n, { useSelectedLanguage, useTranslation } from 'next-export-i18n';
 import { useRouter } from 'next/router';
 import Carousel from 'react-multi-carousel';
 
-import countryToCurrency from '../../public/currency.json';
 import prices from '../../public/prices.json';
 import { Background } from '../background/Background';
 import { BackgroundRound } from '../background/BackgroundRound';
@@ -113,6 +113,23 @@ const getDefaultLanguage = (userI18n) => {
 const Base = () => {
   const router = useRouter();
   const i18nConfig = i18n();
+  const [price, setPrice] = useState(prices.EUR);
+
+  const getGeoInfo = () => {
+    axios
+      .get('https://ipapi.co/json/')
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+
+        if (data.country_code === 'BR') {
+          setPrice(prices.BRL);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     router.push(
@@ -122,17 +139,13 @@ const Base = () => {
       },
       undefined
     );
+    getGeoInfo();
   }, []);
 
   const { t } = useTranslation();
   const { lang } = useSelectedLanguage();
   // const [query] = useLanguageQuery();
   const gaEventTracker = useAnalyticsEventTracker('Event');
-
-  // @ts-ignore
-  const currency = countryToCurrency[lang.split('-').pop().toUpperCase()];
-  // @ts-ignore
-  const price = prices[currency] || prices.EUR;
 
   return (
     <div className="antialiased text-textprimary-300 bg-background-500 xl:text-lg">
@@ -338,7 +351,7 @@ const Base = () => {
                               <div className="text-2xl md:text-3xl">
                                 {String(price.format).replace(
                                   '{0}',
-                                  subtype.price
+                                  String(subtype.price)
                                 )}
                               </div>
                               <div className="self-end text-md">

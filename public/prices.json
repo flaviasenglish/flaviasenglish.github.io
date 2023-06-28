@@ -1,10 +1,10 @@
 {
   "EUR": {
     "format": "{0} €",
-    "exam": 20,
-    "one": 16,
+    "exam": 25,
+    "one": 18,
     "two": 12,
-    "group": 12
+    "group": 10
   },
   "BRL": {
     "format": "R$ {0}",
