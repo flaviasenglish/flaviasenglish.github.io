@@ -413,9 +413,7 @@ const Base = () => {
             partialVisible={true}
             arrows={false}
             showDots
-            autoPlaySpeed={15000}
             pauseOnHover
-            autoPlay
             renderButtonGroupOutside={true}
             // @ts-ignore
             customDot={<CustomDot />}
