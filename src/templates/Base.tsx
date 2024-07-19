@@ -125,6 +125,10 @@ const Base = () => {
         if (data.country_code === 'BR') {
           setPrice(prices.BRL);
         }
+
+        if (data.country_code === 'ES') {
+          setPrice(prices.EUR_ES);
+        }
       })
       .catch((error) => {
         console.log(error);
