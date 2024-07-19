@@ -6,6 +6,13 @@
     "two": 12,
     "group": 10
   },
+  "EUR_ES": {
+    "format": "{0} €",
+    "exam": 25,
+    "one": 20,
+    "two": 15,
+    "group": 10
+  },
   "BRL": {
     "format": "R$ {0}",
     "exam": 120,
