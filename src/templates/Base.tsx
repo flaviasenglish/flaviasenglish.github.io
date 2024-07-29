@@ -126,8 +126,8 @@ const Base = () => {
           setPrice(prices.BRL);
         }
 
-        if (data.country_code === 'ES') {
-          setPrice(prices.EUR_ES);
+        if (data.country_code === 'PT') {
+          setPrice(prices.EUR_PT);
         }
       })
       .catch((error) => {
