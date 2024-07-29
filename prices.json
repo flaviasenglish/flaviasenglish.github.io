@@ -1,12 +1,12 @@
 {
-  "EUR": {
+  "EUR_PT": {
     "format": "{0} €",
     "exam": 25,
     "one": 18,
     "two": 12,
     "group": 10
   },
-  "EUR_ES": {
+  "EUR": {
     "format": "{0} €",
     "exam": 25,
     "one": 20,
@@ -15,9 +15,9 @@
   },
   "BRL": {
     "format": "R$ {0}",
-    "exam": 120,
-    "one": 100,
-    "two": 75,
+    "exam": 150,
+    "one": 120,
+    "two": 90,
     "group": 60
   }
 }
