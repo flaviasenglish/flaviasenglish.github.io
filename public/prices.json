@@ -2,8 +2,8 @@
   "EUR_PT": {
     "format": "{0} €",
     "exam": 25,
-    "one": 18,
-    "two": 12,
+    "one": 20,
+    "two": 15,
     "group": 10
   },
   "EUR": {
