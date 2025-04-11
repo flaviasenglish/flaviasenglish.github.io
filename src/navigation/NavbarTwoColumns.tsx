@@ -1,6 +1,6 @@
-import { useTranslation } from 'next-export-i18n';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-export-i18n';
 
 import { scrollToDiv as globalScrollToDiv } from '../globals';
 

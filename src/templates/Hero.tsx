@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { useTranslation } from 'next-export-i18n';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-export-i18n';
 
 import { Button } from '../button/Button';
 import { scrollToDiv } from '../globals';

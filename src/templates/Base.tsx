@@ -3,10 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
-import i18n, { useSelectedLanguage, useTranslation } from 'next-export-i18n';
 import { useRouter } from 'next/router';
+import i18n, { useSelectedLanguage, useTranslation } from 'next-export-i18n';
 import Carousel from 'react-multi-carousel';
 
+import { Contact } from './Contact';
+import { Footer } from './Footer';
+import { Hero } from './Hero';
 import prices from '../../public/prices.json';
 import { Background } from '../background/Background';
 import { BackgroundRound } from '../background/BackgroundRound';
@@ -14,9 +17,6 @@ import { Meta } from '../layout/Meta';
 import { Section } from '../layout/Section';
 import { AppConfig } from '../utils/AppConfig';
 import useAnalyticsEventTracker from '../utils/useAnalyticsEventTracker';
-import { Contact } from './Contact';
-import { Footer } from './Footer';
-import { Hero } from './Hero';
 
 import 'react-multi-carousel/lib/styles.css';
 

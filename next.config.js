@@ -12,4 +12,5 @@ module.exports = withBundleAnalyzer({
   // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
   assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  output: 'export',
 });

@@ -1,7 +1,7 @@
-import { useTranslation } from 'next-export-i18n';
-import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-export-i18n';
+import { NextSeo } from 'next-seo';
 
 import { AppConfig } from '../utils/AppConfig';
 
