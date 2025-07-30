@@ -22,73 +22,64 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
 
   const menuItems = (
     <>
-      <li
-        onClick={() => {
-          scrollToDiv('aboutme');
-        }}
-      >
-        <Link href="#" shallow={true}>
-          <a>{t('header.about_me')}</a>
+      <li>
+        <Link
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            scrollToDiv('aboutme');
+          }}
+          shallow={true}
+        >
+          {t('header.about_me')}
         </Link>
       </li>
-      <li
-        onClick={() => {
-          scrollToDiv('services');
-        }}
-      >
-        <Link href="#">
-          <a
-            onClick={() => {
-              props.setOpen(!props.open);
-            }}
-          >
-            {t('header.services')}
-          </a>
+      <li>
+        <Link
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            scrollToDiv('services');
+            props.setOpen(false);
+          }}
+        >
+          {t('header.services')}
         </Link>
       </li>
-      <li
-        onClick={() => {
-          scrollToDiv('method');
-        }}
-      >
-        <Link href="#">
-          <a
-            onClick={() => {
-              props.setOpen(!props.open);
-            }}
-          >
-            {t('header.method')}
-          </a>
+      <li>
+        <Link
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            scrollToDiv('method');
+            props.setOpen(false);
+          }}
+        >
+          {t('header.method')}
         </Link>
       </li>
-      <li
-        onClick={() => {
-          scrollToDiv('testimonies');
-        }}
-      >
-        <Link href="#">
-          <a
-            onClick={() => {
-              props.setOpen(!props.open);
-            }}
-          >
-            {t('header.testimonies')}
-          </a>
+      <li>
+        <Link
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            scrollToDiv('testimonies');
+            props.setOpen(false);
+          }}
+        >
+          {t('header.testimonies')}
         </Link>
       </li>
-      <li
-        onClick={() => {
-          scrollToDiv('contact');
-        }}
-      >
-        <Link href="#">
-          <a
-            onClick={() => {
-              props.setOpen(!props.open);
-            }}
-          >
-            {t('header.contact')}
-          </a>
+      <li>
+        <Link
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            scrollToDiv('contact');
+            props.setOpen(false);
+          }}
+        >
+          {t('header.contact')}
         </Link>
       </li>
       <style jsx>
@@ -97,7 +88,8 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
             @apply w-full md:w-auto text-center;
           }
 
-          li a {
+          li :global(a),
+          li :global(span) {
             @apply w-full flex justify-center md:inline px-4 py-2 tracking-wider font-title;
           }
         `}
@@ -108,17 +100,16 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
   return (
     <div className="flex justify-between flex-wrap items-center flex-grow">
       <div>
-        <Link href="#">
-          <a
-            onClick={() => {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
-            <img
-              src={`${router.basePath}/assets/images/logo_top.png`}
-              className="h-10 2xl:h-20 2xl:py-2"
-            />
-          </a>
+        <Link
+          href="#"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <img
+            src={`${router.basePath}/assets/images/logo_top.png`}
+            className="h-10 2xl:h-20 2xl:py-2"
+          />
         </Link>
       </div>
 

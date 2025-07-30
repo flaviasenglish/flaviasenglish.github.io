@@ -228,6 +228,75 @@ const Base = () => {
           <div className="flex flex-col gap-8">
             <div className="rounded-3xl bg-bg_white-0 text-white shadow-md flex flex-col overflow-hidden">
               <div className="flex gap-4 items-center bg-bg_orange-0 p-3 2xl:p-4 px-6 2xl:px-8">
+                <span className="material-icons text-center !text-6xl text-white-0">
+                  cast_for_education
+                </span>
+                <div className="text-xl md:text-2xl font-title font-bold text-center uppercase tracking-wider">
+                  {t('services.classes.title')}
+                </div>
+              </div>
+              <div className="p-4 md:p-8 text-black gap-8 flex-col flex text-justify">
+                {t('services.classes.desc')}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 lg:grid-flow-row grid-rows-[repeat(3,auto)]">
+                  {[
+                    {
+                      name: t('services.classes.classes_title'),
+                      desc: t('services.classes.classes_desc'),
+                      types: [
+                        {
+                          name: t('services.classes.classes_individual'),
+                          price: price.one,
+                          metric: '/h',
+                        },
+                      ],
+                    },
+                    {
+                      name: t('services.classes.exam_title'),
+                      desc: t('services.classes.exam_desc'),
+                      types: [
+                        {
+                          name: t('services.classes.exam_individual'),
+                          price: price.exam,
+                          metric: '/h',
+                        },
+                      ],
+                    },
+                  ].map((type) => (
+                    <div key={type.name}>
+                      <div className="font-bold tracking-wider font-title text-center uppercase bg-bg_orange-0 text-white rounded-full p-2 md:p-4  text-md 2xl:text-lg">
+                        {type.name}
+                      </div>
+                      <div className="px-2 md:px-4 my-4">{type.desc}</div>
+                      <div className="flex gap-2 flex-col md:flex-row lg:flex-col xl:flex-row text-white center justify-center">
+                        {type.types.map((subtype) => (
+                          <div
+                            key={subtype.name}
+                            className="bg-bg_orange-0 rounded-3xl flex flex-col items-center w-3/4 sm:w-1/2 lg:w-3/4 xl:w-1/2 self-center border-solid border-4 border-bg_orange-0 overflow-hidden h-full"
+                          >
+                            <div className="font-bold text-lg justify-center font-title flex-grow text-center flex flex-col place-content-stretch uppercase p-1 md:p-2">
+                              {subtype.name}
+                            </div>
+                            <div className="flex self-center text-center justify-center bg-bg_white-0 w-full text-textprimary p-1 md:p-2 tracking-normal">
+                              <div className="text-2xl md:text-3xl">
+                                {String(price.format).replace(
+                                  '{0}',
+                                  String(subtype.price)
+                                )}
+                              </div>
+                              <div className="self-end text-md">
+                                {subtype.metric}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="rounded-3xl bg-bg_white-0 text-white shadow-md flex flex-col overflow-hidden">
+              <div className="flex gap-4 items-center bg-bg_orange-0 p-3 2xl:p-4 px-6 2xl:px-8">
                 <span className="material-icons text-center !text-5xl 2xl:!text-6xl text-white-0">
                   article
                 </span>
@@ -283,90 +352,6 @@ const Base = () => {
                       }}
                     ></p>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-3xl bg-bg_white-0 text-white shadow-md flex flex-col overflow-hidden">
-              <div className="flex gap-4 items-center bg-bg_orange-0 p-3 2xl:p-4 px-6 2xl:px-8">
-                <span className="material-icons text-center !text-6xl text-white-0">
-                  cast_for_education
-                </span>
-                <div className="text-xl md:text-2xl font-title font-bold text-center uppercase tracking-wider">
-                  {t('services.classes.title')}
-                </div>
-              </div>
-              <div className="p-4 md:p-8 text-black gap-8 flex-col flex text-justify">
-                {t('services.classes.desc')}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 lg:grid-flow-row grid-rows-[repeat(3,auto)]">
-                  {[
-                    {
-                      name: t('services.classes.exam_title'),
-                      desc: t('services.classes.exam_desc'),
-                      types: [
-                        {
-                          name: t('services.classes.exam_individual'),
-                          price: price.exam,
-                          metric: '/h',
-                        },
-                      ],
-                    },
-                    {
-                      name: t('services.classes.classes_title'),
-                      desc: t('services.classes.classes_desc'),
-                      types: [
-                        {
-                          name: t('services.classes.classes_individual'),
-                          price: price.one,
-                          metric: '/h',
-                        },
-                        {
-                          name: t('services.classes.classes_double'),
-                          subname: t('services.classes.classes_per_student'),
-                          price: price.two,
-                          metric: '/h',
-                        },
-                        {
-                          name: t('services.classes.classes_group'),
-                          subname: t('services.classes.classes_per_student'),
-                          price: price.group,
-                          metric: '/h',
-                        },
-                      ],
-                    },
-                  ].map((type) => (
-                    <div key={type.name}>
-                      <div className="font-bold tracking-wider font-title text-center uppercase bg-bg_orange-0 text-white rounded-full p-2 md:p-4  text-md 2xl:text-lg">
-                        {type.name}
-                      </div>
-                      <div className="px-2 md:px-4 my-4">{type.desc}</div>
-                      <div className="flex gap-2 flex-col md:flex-row lg:flex-col xl:flex-row text-white center justify-center">
-                        {type.types.map((subtype) => (
-                          <div
-                            key={subtype.name}
-                            className="bg-bg_orange-0 rounded-3xl flex flex-col items-center w-3/4 sm:w-1/2 lg:w-3/4 xl:w-1/2 self-center border-solid border-4 border-bg_orange-0 overflow-hidden h-full"
-                          >
-                            <div className="font-bold text-lg justify-center font-title flex-grow text-center flex flex-col place-content-stretch uppercase p-1 md:p-2">
-                              {subtype.name}
-                              <div className="text-xs font-bold font-title -mt-1">
-                                {subtype.subname}
-                              </div>
-                            </div>
-                            <div className="flex self-center text-center justify-center bg-bg_white-0 w-full text-textprimary p-1 md:p-2 tracking-normal">
-                              <div className="text-2xl md:text-3xl">
-                                {String(price.format).replace(
-                                  '{0}',
-                                  String(subtype.price)
-                                )}
-                              </div>
-                              <div className="self-end text-md">
-                                {subtype.metric}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
