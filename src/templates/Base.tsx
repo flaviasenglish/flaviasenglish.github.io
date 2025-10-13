@@ -117,14 +117,14 @@ const Base = () => {
 
   const getGeoInfo = () => {
     axios
-      .get('https://api.country.is/')
+      .get('https://free.freeipapi.com/api/json/')
       .then((response) => {
         const { data } = response;
         console.log(data);
 
-        if (data.country === 'BR') {
+        if (data.countryCode === 'BR') {
           setPrice(prices.BRL);
-        } else if (data.country === 'PT') {
+        } else if (data.countryCode === 'PT') {
           setPrice(prices.EUR_PT);
         } else {
           setPrice(prices.EUR);
