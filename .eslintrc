@@ -5,9 +5,9 @@
     "prettier/prettier": [
       "error",
       {
-        "singleQuote": true
-      }
-    ]
+        "singleQuote": true,
+      },
+    ],
   },
   "overrides": [
     // Configuration for TypeScript files
@@ -17,17 +17,17 @@
       "extends": [
         "airbnb-typescript",
         "next/core-web-vitals",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
       ],
       "parserOptions": {
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.json",
       },
       "rules": {
         "prettier/prettier": [
           "error",
           {
-            "singleQuote": true
-          }
+            "singleQuote": true,
+          },
         ],
         "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
         "jsx-a11y/anchor-is-valid": "off", // Next.js use his own internal link system
@@ -43,24 +43,27 @@
               {
                 "pattern": "react",
                 "group": "external",
-                "position": "before"
-              }
+                "position": "before",
+              },
             ],
             "pathGroupsExcludedImportTypes": ["react"],
             "newlines-between": "always",
             "alphabetize": {
               "order": "asc",
-              "caseInsensitive": true
-            }
-          }
+              "caseInsensitive": true,
+            },
+          },
         ],
         "import/prefer-default-export": "off", // Named export is easier to refactor automatically
         "class-methods-use-this": "off", // _document.tsx use render method without `this` keyword
         "@typescript-eslint/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "warn",
         "no-param-reassign": "warn",
-        "unused-imports/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
-      }
-    }
-  ]
+        "unused-imports/no-unused-vars": [
+          "warn",
+          { "argsIgnorePattern": "^_" },
+        ],
+      },
+    },
+  ],
 }

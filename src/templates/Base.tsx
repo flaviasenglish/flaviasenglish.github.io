@@ -113,25 +113,26 @@ const getDefaultLanguage = (userI18n) => {
 const Base = () => {
   const router = useRouter();
   const i18nConfig = i18n();
-  const [price, setPrice] = useState(prices.EUR);
+  const [price, setPrice] = useState({});
 
   const getGeoInfo = () => {
     axios
-      .get('https://ipapi.co/json/')
+      .get('https://api.country.is/')
       .then((response) => {
         const { data } = response;
         console.log(data);
 
-        if (data.country_code === 'BR') {
+        if (data.country === 'BR') {
           setPrice(prices.BRL);
-        }
-
-        if (data.country_code === 'PT') {
+        } else if (data.country === 'PT') {
           setPrice(prices.EUR_PT);
+        } else {
+          setPrice(prices.EUR);
         }
       })
       .catch((error) => {
         console.log(error);
+        setPrice(prices.EUR);
       });
   };
 
@@ -245,7 +246,8 @@ const Base = () => {
                       types: [
                         {
                           name: t('services.classes.classes_individual'),
-                          price: price.one,
+                          // @ts-ignore
+                          price: price.one || '',
                           metric: '/h',
                         },
                       ],
@@ -256,7 +258,8 @@ const Base = () => {
                       types: [
                         {
                           name: t('services.classes.exam_individual'),
-                          price: price.exam,
+                          // @ts-ignore
+                          price: price.exam || '',
                           metric: '/h',
                         },
                       ],
@@ -278,10 +281,13 @@ const Base = () => {
                             </div>
                             <div className="flex self-center text-center justify-center bg-bg_white-0 w-full text-textprimary p-1 md:p-2 tracking-normal">
                               <div className="text-2xl md:text-3xl">
-                                {String(price.format).replace(
-                                  '{0}',
-                                  String(subtype.price)
-                                )}
+                                {
+                                  // @ts-ignore
+                                  String(price.format || '').replace(
+                                    '{0}',
+                                    String(subtype.price)
+                                  )
+                                }
                               </div>
                               <div className="self-end text-md">
                                 {subtype.metric}
