@@ -2,7 +2,7 @@
   "EUR_PT": {
     "format": "{0} €",
     "exam": 30,
-    "one": 22
+    "one": 25
   },
   "EUR": {
     "format": "{0} €",
@@ -12,6 +12,6 @@
   "BRL": {
     "format": "R$ {0}",
     "exam": 200,
-    "one": 120
+    "one": 150
   }
 }
