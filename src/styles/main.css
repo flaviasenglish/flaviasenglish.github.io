@@ -52,12 +52,18 @@
 
 @font-face {
   font-family: 'DidactGothic';
-  src: url('/assets/fonts/DidactGothic-Regular.ttf');
+  src:
+    url('/assets/fonts/DidactGothic-Regular.woff2') format('woff2'),
+    url('/assets/fonts/DidactGothic-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Megante';
-  src: url('/assets/fonts/Megante.ttf');
+  src:
+    url('/assets/fonts/Megante.woff2') format('woff2'),
+    url('/assets/fonts/Megante.ttf') format('truetype');
+  font-display: swap;
 }
 
 body::-webkit-scrollbar-track {

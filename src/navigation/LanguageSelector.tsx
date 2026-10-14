@@ -1,24 +1,19 @@
 import { useTranslation } from 'react-i18next';
 
-const languages = [
-  { code: 'pt-BR', short: 'BR', name: 'Português (BR)' },
-  { code: 'pt', short: 'PT', name: 'Português (PT)' },
-  { code: 'es', short: 'ES', name: 'Español' },
-];
+import { findLanguage, languages } from '../i18n';
+import { storeLanguage } from '../utils/languagePreference';
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
 
-  const current =
-    languages.find((lang) => lang.code === i18n.resolvedLanguage) ??
-    languages[0]!;
+  const current = findLanguage(i18n.language) ?? languages[0];
 
   const changeLanguage = (code: string) => {
-    i18n.changeLanguage(code);
-    // Keep the choice in the URL so the link can be shared
-    const url = new URL(window.location.href);
-    url.searchParams.set('lang', code);
-    window.history.replaceState(null, '', url);
+    const lang = findLanguage(code);
+    if (!lang) return;
+    storeLanguage(lang.code);
+    // Each language is its own prerendered page
+    window.location.assign(lang.path);
   };
 
   // The visible pill is just a label; a transparent native <select> sits on

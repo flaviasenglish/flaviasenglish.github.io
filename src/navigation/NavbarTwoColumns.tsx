@@ -50,6 +50,7 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
         >
           <img
             src={`${import.meta.env.BASE_URL}assets/images/logo_top.png`}
+            alt="Flávia Forcatho English Solutions"
             className="h-auto max-h-10 w-auto max-w-full 2xl:max-h-20 2xl:py-2"
           />
         </a>
@@ -72,6 +73,8 @@ const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
         <div className="flex items-center md:hidden">
           <button
             className="mobile-menu-button cursor-pointer outline-hidden"
+            aria-label="Menu"
+            aria-expanded={props.open}
             onClick={() => props.setOpen(!props.open)}
           >
             <svg

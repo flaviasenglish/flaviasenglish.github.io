@@ -1,14 +1,15 @@
-import { Background } from '../background/Background';
 import { Section } from '../layout/Section';
 
 const Footer = () => {
   return (
-    <Background color="bg-bg_blue-0 relative overflow-hidden">
+    <footer className="relative overflow-hidden bg-bg_blue-0">
       <div className="z-10">
         <Section>
           <div className="flex justify-center text-center text-lg text-white">
             <img
               src={`${import.meta.env.BASE_URL}assets/images/logo_bottom.png`}
+              alt="Flávia Forcatho English Solutions"
+              loading="lazy"
               className="h-42 md:h-64"
             />
           </div>
@@ -16,6 +17,9 @@ const Footer = () => {
       </div>
       <img
         src={`${import.meta.env.BASE_URL}assets/images/bg.svg`}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
         className="absolute top-0 max-h-none min-h-screen max-w-none overflow-hidden opacity-20"
         style={{
           minWidth: '100vw',
@@ -25,7 +29,7 @@ const Footer = () => {
           pointerEvents: 'none',
         }}
       />
-    </Background>
+    </footer>
   );
 };
 

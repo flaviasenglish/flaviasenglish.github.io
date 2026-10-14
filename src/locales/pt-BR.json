@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Flávia Forcatho | Aulas particulares de inglês online",
+    "description": "Aulas particulares de inglês online com Flávia Forcatho, Mestra em Língua Inglesa pela UFMG, com 15 anos de experiência. Conversação, inglês para viagens e preparação para IELTS, TOEFL e Cambridge.",
+    "job_title": "Professora de inglês",
+    "service_type": "Aulas particulares de inglês"
+  },
   "header": {
     "about_me": "Sobre mim",
     "services": "Serviços",
@@ -9,7 +15,8 @@
   "hero": {
     "title": "O seu passaporte para a língua inglesa",
     "description": "15 anos de experiência. Mestra em Língua Inglesa pela UFMG.",
-    "learn_more": "Conheça os meus serviços"
+    "learn_more": "Conheça os meus serviços",
+    "photo_alt": "Flávia Forcatho, professora de inglês"
   },
   "about_me": {
     "my_story": "Minha história",
@@ -59,6 +66,8 @@
   },
   "testimonials": {
     "title": "DEPOIMENTOS",
+    "previous": "Depoimento anterior",
+    "next": "Próximo depoimento",
     "items": {
       "marina_marques": "Recomendo fortemente a Flávia! Muito competente, atenciosa e agradável. Nas aulas, me sinto extremamente confortável - algo que não acontecia com outros professores. Com ela, melhorei significativamente minhas habilidades de leitura e fala, além de me sentir mais motivada para o aprendizado da língua inglesa.",
       "gabriel_schunk": "Quando ingressei no mestrado, precisava urgentemente desenvolver habilidades de leitura em inglês. Procurei a Flávia e em pouco mais de um ano juntos, desenvolvi bastante a minha leitura e também a escuta, escrita e conversação. As aulas são ótimas, pensadas com carinho para as especificidades de cada aluno e, além de tudo, através de uma relação saudável, respeitosa, humana e amigável.",

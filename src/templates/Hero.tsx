@@ -47,7 +47,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="text-primary-500 fixed top-0 right-0 left-0 z-[9999] bg-white drop-shadow-md">
+      <header className="text-primary-500 fixed top-0 right-0 left-0 z-[9999] bg-white drop-shadow-md">
         <div
           ref={TopBar}
           className="absolute top-0 right-0 bottom-0 left-0 bg-white"
@@ -59,7 +59,7 @@ const Hero = () => {
             setOpen={(value: boolean) => setOpen(value)}
           ></NavbarTwoColumns>
         </div>
-      </div>
+      </header>
       <div className="w-full flex-wrap place-items-center items-center overflow-hidden">
         <div className="flex h-full max-h-screen w-full items-center justify-center overflow-hidden">
           <div className="text-textprimary-100 absolute z-10 flex h-auto max-h-full w-full flex-col items-stretch gap-1 px-4 pt-[60px] pb-[120px] lg:max-h-[calc(100%-120px)] lg:w-10/12 lg:flex-row lg:gap-16 lg:px-0 lg:pt-0 lg:pb-0 2xl:w-3/4 2xl:gap-32">
@@ -78,12 +78,14 @@ const Hero = () => {
                 }
               >
                 <div className="h-full w-full p-[7.5%] pt-[8.5%] pb-[18.2%]">
-                  <div
-                    className="h-full w-full bg-cover bg-center bg-no-repeat"
-                    style={{
-                      backgroundImage: `url(${import.meta.env.BASE_URL}assets/images/hero1.png)`,
-                    }}
-                  ></div>
+                  <img
+                    src={`${import.meta.env.BASE_URL}assets/images/hero1.webp`}
+                    alt={t('hero.photo_alt')}
+                    width={450}
+                    height={620}
+                    fetchPriority="high"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
               <div
@@ -98,30 +100,33 @@ const Hero = () => {
                 }
               >
                 <div className="h-full w-full p-[7.5%] pt-[8.5%] pb-[18.2%]">
-                  <div
-                    className="h-full w-full bg-cover bg-center bg-no-repeat"
-                    style={{
-                      backgroundImage: `url(${import.meta.env.BASE_URL}assets/images/hero2.png)`,
-                    }}
-                  ></div>
+                  <img
+                    src={`${import.meta.env.BASE_URL}assets/images/hero2.webp`}
+                    alt={t('hero.photo_alt')}
+                    width={450}
+                    height={620}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
             <div className="w-full self-center">
               <div className="flex flex-col items-center gap-2 self-end rounded-[2rem] bg-white p-6 drop-shadow-lg lg:gap-4 2xl:p-14">
-                <div className="text-center font-title text-lg tracking-wide uppercase md:text-3xl 2xl:text-4xl">
+                <h1 className="text-center font-title text-lg font-normal tracking-wide uppercase md:text-3xl 2xl:text-4xl">
                   {t('hero.title')}
-                </div>
-                <div className="mb-2 text-justify text-base text-gray-600 md:text-xl lg:mb-4 lg:text-2xl">
+                </h1>
+                <p className="mb-2 text-justify text-base text-gray-600 md:text-xl lg:mb-4 lg:text-2xl">
                   {t('hero.description')}
-                </div>
+                </p>
                 <Button onClick={() => scrollToDiv('services')}>
                   {t('hero.learn_more')}
                 </Button>
               </div>
             </div>
           </div>
-          <div
+          <button
+            type="button"
+            aria-label={t('header.about_me')}
             onClick={() => scrollToDiv('aboutme')}
             className="absolute bottom-4 left-1/2 z-[1] flex h-[60px] w-[60px] -translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-bg_blue-0 drop-shadow-lg select-none xl:h-[70px] xl:w-[70px]"
           >
@@ -131,10 +136,12 @@ const Hero = () => {
             >
               south
             </span>
-          </div>
+          </button>
           <div className="flex overflow-hidden bg-bg_white-0">
             <img
               src={`${import.meta.env.BASE_URL}assets/images/bg.svg`}
+              alt=""
+              aria-hidden="true"
               className="max-h-none min-h-screen max-w-none opacity-20"
               style={{
                 minWidth: '100vw',

@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Flávia Forcatho | Aulas particulares de inglês online",
+    "description": "Aulas particulares de inglês online com Flávia Forcatho, Mestra em Língua Inglesa pela UFMG, com 15 anos de experiência. Conversação, inglês para viagens e preparação para IELTS, TOEFL e Cambridge.",
+    "job_title": "Professora de inglês",
+    "service_type": "Aulas particulares de inglês"
+  },
   "header": {
     "about_me": "Sobre mim",
     "services": "Serviços",
@@ -9,7 +15,8 @@
   "hero": {
     "title": "O teu passaporte para a língua inglesa",
     "description": "15 anos de experiência. Mestra em Língua Inglesa pela UFMG.",
-    "learn_more": "Conhece os meus serviços"
+    "learn_more": "Conhece os meus serviços",
+    "photo_alt": "Flávia Forcatho, professora de inglês"
   },
   "about_me": {
     "my_story": "A minha história",
@@ -58,7 +65,9 @@
     "individual_classes": "São muitas as vantagens da aula particular. Primeiramente, citaria a liberdade do professor em desenvolver um <b>plano de estudos personalizado</b> que garante resultados. Também a relação que é desenvolvida com cada aluno ao longo das aulas torna o trabalho mais pessoal e humano, o que é fundamental para mim - fiz verdadeiros amigos ensinando inglês. No mais, minha diversificada experiência profissional me permitiu atestar, sem sombra de dúvidas, que <b> alunos particulares aprendem mais rápido, melhor e com mais prazer. </b> Tenho muita paixão pelo trabalho que faço porque acredito nele; não mais me frustro com as conhecidas desvantagens das escolas tradicionais de inglês. <b> Como professora particular, sou livre para priorizar o ensino de qualidade. </b>"
   },
   "testimonials": {
-    "title": "TESTEMUNHOS"
+    "title": "TESTEMUNHOS",
+    "previous": "Testemunho anterior",
+    "next": "Próximo testemunho"
   },
   "contact": {
     "title": "Contacto",

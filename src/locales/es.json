@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "Flávia Forcatho | Clases particulares de inglés online",
+    "description": "Clases particulares de inglés online con Flávia Forcatho, máster en Lengua Inglesa y 15 años de experiencia. Conversación, inglés para viajes y preparación para IELTS, TOEFL y Cambridge.",
+    "job_title": "Profesora de inglés",
+    "service_type": "Clases particulares de inglés"
+  },
   "header": {
     "about_me": "Sobre mí",
     "services": "Servicios",
@@ -9,7 +15,8 @@
   "hero": {
     "title": "Tu pasaporte a la lengua inglesa",
     "description": "15 años de experiencia. Máster en Lengua Inglesa por la Universidad Federal de Minas Gerais.",
-    "learn_more": "Conoce mis servicios"
+    "learn_more": "Conoce mis servicios",
+    "photo_alt": "Flávia Forcatho, profesora de inglés"
   },
   "about_me": {
     "my_story": "Mi historia",
@@ -59,6 +66,8 @@
   },
   "testimonials": {
     "title": "TESTIMONIOS",
+    "previous": "Testimonio anterior",
+    "next": "Siguiente testimonio",
     "items": {
       "marina_marques": "¡Recomiendo muchísimo a Flávia! Es muy competente, atenta y agradable. En las clases me siento muy cómoda, algo que no me pasaba con otros profesores. Con ella he mejorado notablemente mi comprensión lectora y mi expresión oral, y además me siento más motivada para aprender inglés.",
       "gabriel_schunk": "Cuando empecé el máster, necesitaba con urgencia desarrollar la comprensión lectora en inglés. Busqué a Flávia y, en poco más de un año juntos, mejoré mucho la lectura y también la comprensión auditiva, la escritura y la conversación. Las clases son excelentes, pensadas con cariño para las particularidades de cada alumno y, sobre todo, basadas en una relación sana, respetuosa, humana y cercana.",
