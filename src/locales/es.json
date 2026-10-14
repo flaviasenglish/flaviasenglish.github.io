@@ -1,0 +1,88 @@
+{
+  "header": {
+    "about_me": "Sobre mí",
+    "services": "Servicios",
+    "method": "Clases",
+    "testimonies": "Testimonios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Tu pasaporte a la lengua inglesa",
+    "description": "15 años de experiencia. Máster en Lengua Inglesa por la UFMG.",
+    "learn_more": "Conoce mis servicios"
+  },
+  "about_me": {
+    "my_story": "Mi historia",
+    "my_story_text": "Apasionada por la lengua inglesa desde la infancia, me gradué en Filología Inglesa en la UFMG en 2015, donde también terminé el Máster en Lengua Inglesa en 2019. Mi trayectoria como profesora comenzó en 2011. A lo largo de estos años, he pasado por reconocidas academias de inglés y también he impartido clases en la UFMG en diferentes programas. Estoy agradecida por todas esas oportunidades, que contribuyeron enormemente a mi formación. Pero en 2017, ya con una buena experiencia profesional, empecé a recorrer el que sabía que era mi propio camino: clases particulares para adultos. Ya son decenas de alumnos particulares a lo largo de todos estos años, y no tengo ninguna duda de haber tomado la decisión que mejor me permite compartir mis conocimientos. <b>Mi objetivo es que el inglés deje de ser un problema en tu vida, y mi vocación es hacerlo con excelencia.</b>",
+    "certificates_title": "Certificaciones",
+    "certificates": {
+      "masters_ufmg": "Máster en Lengua Inglesa (UFMG)",
+      "toefl": "TOEFL iBT: 118/120",
+      "graduation": "Grado en Filología Inglesa (UFMG)"
+    }
+  },
+  "services": {
+    "title": "Servicios",
+    "text": {
+      "title": "Trabajos con textos",
+      "translation": "Traducción",
+      "translation_desc": "Traduzco trabajos académicos, libros, vídeos, audios, cartas, correos electrónicos, menús, páginas web, etc. Inglés → Portugués y Portugués → Inglés. No soy traductora jurada, por lo que no traduzco documentos oficiales.",
+      "revision": "Revisión",
+      "revision_desc": "Reviso textos en inglés: trabajos académicos, libros, guiones, cartas, correos electrónicos, menús, páginas web, etc. No reviso textos en portugués.",
+      "subtitle": "Subtitulado",
+      "subtitle_desc": "Hago transcripciones de audios y vídeos en inglés. Subtitulo vídeos en inglés, con subtítulos en inglés y/o en portugués. Subtitulo vídeos en portugués con subtítulos en inglés.",
+      "budget_title": "Presupuesto",
+      "budget_text": "El presupuesto de los servicios de traducción y revisión tiene en cuenta la extensión del material original, el nivel de especialización y el plazo. Para pedir un presupuesto, solo tienes que escribir a <b><a href='mailto:flaviasenglish@gmail.com'>flaviasenglish@gmail.com</a></b>, adjuntando el texto y especificando el plazo deseado."
+    },
+    "classes": {
+      "title": "Clases particulares de inglés",
+      "desc": "Curso completo, conversación, inglés para viajes, inglés con fines específicos, preparación para exámenes (IELTS, TOEFL ITP e iBT, acreditación para posgrados, movilidad académica, FCE, CAE y PTE Academic).",
+      "exam_title": "Preparación para exámenes",
+      "exam_desc": "Preparación para TOEFL, IELTS, etc., centrada en las destrezas específicas evaluadas en cada examen. Incluye corrección de textos, evaluación de speaking, estrategias para reading y listening, y estimación de resultados.",
+      "exam_individual": "Individual",
+      "classes_title": "Clases particulares",
+      "classes_desc": "Incluye prueba de nivel gratuita, material compartido y un plan de estudios individual y personalizado según los objetivos, intereses y perfil del alumno.",
+      "classes_individual": "Individual",
+      "classes_double": "Parejas",
+      "classes_group": "Grupos",
+      "classes_per_student": "por alumno"
+    }
+  },
+  "method": {
+    "title": "Método",
+    "desc_1": "Esta es casi siempre la primera pregunta que me hacen los alumnos interesados: «¿cuál es tu método?». Sin embargo, cada alumno es una combinación única de perfil de aprendizaje, objetivos con el idioma, experiencias previas de estudio, intereses, personalidad y plazos. Es imposible que un único método sirva para todos. Por eso, <b>no tengo un método fijo</b>: trabajo con una variedad de enfoques y materiales (incluido material propio), y creo en una metodología flexible y en clases variadas.",
+    "desc_2": "Los alumnos rellenan un formulario antes de empezar las clases, para que pueda conocerlos mejor y pensar en un plan de estudios inicial. Los alumnos que se consideran de nivel intermedio o avanzado hacen una prueba de nivel gratuita para identificar las destrezas (expresión oral, comprensión auditiva, comprensión lectora y expresión escrita) que necesitan más atención. La prueba determinará el nivel MCER del alumno en cada destreza. A lo largo del curso, los alumnos son libres de opinar sobre las actividades elegidas o sugerir un cambio de rumbo (por ejemplo, si surge una nueva necesidad, como un examen oficial, un viaje al extranjero, etc.). Poco a poco, juntos, vamos ajustando las clases a las necesidades e intereses del alumno. Las metodologías tienen que fluir, porque la vida fluye.",
+    "online_classes_title": "Clases online",
+    "online_classes": "Como trabajo con clases online desde 2015, tengo mucha experiencia en hacer que la clase online sea lo más práctica e inmersiva posible. Utilizo Zoom, un programa pensado para clases, junto con otras herramientas virtuales, para ofrecer una clase interactiva, dinámica y completa. Todas las notas tomadas en clase se envían después al alumno, junto con el material, para que tu única preocupación sea aprender. 😊",
+    "individual_classes_title": "Clases particulares",
+    "individual_classes": "Las clases particulares tienen muchas ventajas. En primer lugar, destacaría la libertad del profesor para desarrollar un <b>plan de estudios personalizado</b> que garantiza resultados. Además, la relación que se crea con cada alumno a lo largo de las clases hace que el trabajo sea más personal y humano, algo fundamental para mí: he hecho verdaderos amigos enseñando inglés. Por lo demás, mi variada experiencia profesional me ha permitido comprobar, sin lugar a dudas, que <b>los alumnos particulares aprenden más rápido, mejor y disfrutando más.</b> Me apasiona mi trabajo porque creo en él; ya no me frustran las conocidas desventajas de las academias de inglés tradicionales. <b>Como profesora particular, soy libre de priorizar una enseñanza de calidad.</b>"
+  },
+  "testimonials": {
+    "title": "TESTIMONIOS"
+  },
+  "contact": {
+    "title": "Contacto",
+    "phone": "Teléfono",
+    "send_a_message": "Envía un mensaje",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono o WhatsApp con prefijo del país",
+      "subject": "Asunto",
+      "message": "Escribe tu mensaje. ¡Sé específico!",
+      "send": "Enviar",
+      "subjects": {
+        "select_a_subject": "Elige un asunto",
+        "classes": "Me interesa recibir clases",
+        "translation": "Quiero un presupuesto de traducción/revisión/transcripción",
+        "review": "Ya soy cliente y quiero dejar una valoración",
+        "other": "Otro"
+      },
+      "error": {
+        "required_field": "Campo obligatorio",
+        "must_be_a_number": "Debe ser un número",
+        "type_valid_email": "Introduce un correo electrónico válido"
+      }
+    }
+  }
+}

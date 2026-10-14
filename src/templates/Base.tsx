@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
-import { useRouter } from 'next/router';
-import i18n, { useSelectedLanguage, useTranslation } from 'next-export-i18n';
-import Carousel from 'react-multi-carousel';
+import { useTranslation } from 'react-i18next';
+import CarouselModule, {
+  type ButtonGroupProps,
+  type DotProps,
+} from 'react-multi-carousel';
 
+import { Background } from '../background/Background';
+import { BackgroundRound } from '../background/BackgroundRound';
+import prices from '../data/prices.json';
+import { Section } from '../layout/Section';
+import useAnalyticsEventTracker from '../utils/useAnalyticsEventTracker';
 import { Contact } from './Contact';
 import { Footer } from './Footer';
 import { Hero } from './Hero';
-import prices from '../../public/prices.json';
-import { Background } from '../background/Background';
-import { BackgroundRound } from '../background/BackgroundRound';
-import { Meta } from '../layout/Meta';
-import { Section } from '../layout/Section';
-import { AppConfig } from '../utils/AppConfig';
-import useAnalyticsEventTracker from '../utils/useAnalyticsEventTracker';
 
-import 'react-multi-carousel/lib/styles.css';
+// react-multi-carousel is CommonJS; depending on the interop, the default
+// import can be the module object instead of the component
+const Carousel =
+  (CarouselModule as unknown as { default?: typeof CarouselModule }).default ??
+  CarouselModule;
 
 const responsive = {
   desktop: {
@@ -38,46 +41,39 @@ const responsive = {
   },
 };
 
-// @ts-ignore
-const CustomDot = ({ onClick, active }) => {
+const CustomDot = ({ onClick, active }: DotProps) => {
   return (
     <li
       className={`${
         active ? 'active' : 'inactive'
-      } w-[14px] h-[14px] bg-bg_blue-0 border-2 border-bg_blue-0 rounded-full m-1 ${
+      } m-1 h-[14px] w-[14px] rounded-full border-2 border-bg_blue-0 bg-bg_blue-0 ${
         active ? 'scale-150' : ''
-      }  cursor-pointer flex-shrink-0`}
-      onClick={() => onClick()}
+      } shrink-0 cursor-pointer`}
+      onClick={() => onClick?.()}
     ></li>
   );
 };
 
-// @ts-ignore
-const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
-  // @ts-ignore
-  const {
-    // @ts-ignore
-    carouselState: { currentSlide },
-  } = rest;
+const CustomButtonGroup = ({ next, previous }: ButtonGroupProps) => {
   return (
-    <div className="carousel-button-group w-full absolute bottom-0 flex items-center invisible md:visible">
+    <div className="carousel-button-group invisible absolute bottom-0 flex w-full items-center md:visible">
       <button
-        className="absolute -translate-y-1/4 left-2 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
-        onClick={() => previous()}
+        className="absolute left-2 flex -translate-y-1/4 rounded-full bg-bg_blue-0 p-4 shadow-md drop-shadow-md"
+        onClick={() => previous?.()}
       >
         <span
-          className="material-icons-round text-center !text-4xl xl:!text-4xl text-white"
+          className="material-icons-round text-center text-4xl! text-white xl:text-4xl!"
           style={{ WebkitTextStroke: '2px' }}
         >
           west
         </span>
       </button>
       <button
-        className="absolute -translate-y-1/4 right-2 bg-bg_blue-0 p-4 flex rounded-full shadow-md drop-shadow-md"
-        onClick={() => next()}
+        className="absolute right-2 flex -translate-y-1/4 rounded-full bg-bg_blue-0 p-4 shadow-md drop-shadow-md"
+        onClick={() => next?.()}
       >
         <span
-          className="material-icons-round text-center !text-4xl xl:!text-4xl text-white"
+          className="material-icons-round text-center text-4xl! text-white xl:text-4xl!"
           style={{ WebkitTextStroke: '2px' }}
         >
           east
@@ -87,41 +83,15 @@ const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
   );
 };
 
-// @ts-ignore
-const getDefaultLanguage = (userI18n) => {
-  let browserLang = '';
-  if (
-    typeof window !== 'undefined' &&
-    window &&
-    window.navigator &&
-    (window.navigator.languages || window.navigator.language)
-  ) {
-    browserLang =
-      (window.navigator.languages && window.navigator.languages[0]) ||
-      window.navigator.language;
-  }
-  if (browserLang && userI18n.translations[browserLang]) {
-    return browserLang;
-  }
-  const fallback = browserLang.split('-').shift();
-  if (fallback && userI18n.translations[fallback]) {
-    return fallback;
-  }
-  return userI18n.defaultLang;
-};
+type Price = (typeof prices)[keyof typeof prices];
 
 const Base = () => {
-  const router = useRouter();
-  const i18nConfig = i18n();
-  const [price, setPrice] = useState({});
+  const [price, setPrice] = useState<Price | null>(null);
 
-  const getGeoInfo = () => {
-    axios
-      .get('https://free.freeipapi.com/api/json/')
-      .then((response) => {
-        const { data } = response;
-        console.log(data);
-
+  useEffect(() => {
+    fetch('https://free.freeipapi.com/api/json/')
+      .then((response) => response.json())
+      .then((data: { countryCode?: string }) => {
         if (data.countryCode === 'BR') {
           setPrice(prices.BRL);
         } else if (data.countryCode === 'PT') {
@@ -134,37 +104,18 @@ const Base = () => {
         console.log(error);
         setPrice(prices.EUR);
       });
-  };
-
-  useEffect(() => {
-    router.push(
-      {
-        pathname: router.pathname,
-        query: `lang=${getDefaultLanguage(i18nConfig)}`,
-      },
-      undefined
-    );
-    getGeoInfo();
   }, []);
 
   const { t } = useTranslation();
-  const { lang } = useSelectedLanguage();
-  // const [query] = useLanguageQuery();
   const gaEventTracker = useAnalyticsEventTracker('Event');
 
   return (
-    <div className="antialiased text-textprimary-300 bg-background-500 xl:text-lg">
-      <Meta
-        title={AppConfig.title}
-        description={AppConfig.description}
-        language={lang}
-      />
-
+    <div className="text-textprimary-300 bg-background-500 antialiased xl:text-lg">
       <Hero />
       <BackgroundRound color="bg-bg_blue-0 text-white" id="aboutme">
-        <div className="flex gap-8 lg:gap-16 2xl:gap-16 flex-col lg:flex-row">
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-16 2xl:gap-16">
           <div className="w-full">
-            <div className="text-2xl md:text-3xl font-title mb-4 uppercase tracking-wider">
+            <div className="mb-4 font-title text-2xl tracking-wider uppercase md:text-3xl">
               {t('about_me.my_story')}
             </div>
             <p
@@ -173,10 +124,10 @@ const Base = () => {
             ></p>
           </div>
           <div className="w-full">
-            <div className="text-2xl md:text-3xl font-title mb-4 uppercase tracking-wider">
+            <div className="mb-4 font-title text-2xl tracking-wider uppercase md:text-3xl">
               {t('about_me.certificates_title')}
             </div>
-            <div className="grid grid-cols-2 gap-2 2xl:gap-8 auto-rows-fr">
+            <div className="grid auto-rows-fr grid-cols-2 gap-2 2xl:gap-8">
               {[
                 {
                   name: t('about_me.certificates.masters_ufmg'),
@@ -204,17 +155,17 @@ const Base = () => {
                 },
               ].map((certif) => (
                 <div
-                  className="rounded-3xl p-2 2xl:p-4 bg-background text-black shadow-md flex flex-col gap-1 uppercase"
+                  className="flex flex-col gap-1 rounded-3xl bg-background p-2 text-black uppercase shadow-md 2xl:p-4"
                   key={certif.name}
                 >
-                  <span className="material-icons text-center !text-6xl text-bg_orange-0">
+                  <span className="material-icons text-center text-6xl! text-bg_orange-0">
                     workspace_premium
                   </span>
-                  <div className="flex flex-col flex-grow items-center justify-center tracking-wide font-title">
-                    <div className="text-base text-center font-bold tracking-wider">
+                  <div className="flex grow flex-col items-center justify-center font-title tracking-wide">
+                    <div className="text-center text-base font-bold tracking-wider">
                       {certif.name}
                     </div>
-                    <div className="text-sm text-center font-bold tracking-widest">
+                    <div className="text-center text-sm font-bold tracking-widest">
                       {certif.year}
                     </div>
                   </div>
@@ -227,18 +178,18 @@ const Base = () => {
       <Background color="">
         <Section title={t('services.title')} id={'services'}>
           <div className="flex flex-col gap-8">
-            <div className="rounded-3xl bg-bg_white-0 text-white shadow-md flex flex-col overflow-hidden">
-              <div className="flex gap-4 items-center bg-bg_orange-0 p-3 2xl:p-4 px-6 2xl:px-8">
-                <span className="material-icons text-center !text-6xl text-white-0">
+            <div className="flex flex-col overflow-hidden rounded-3xl bg-bg_white-0 text-white shadow-md">
+              <div className="flex items-center gap-4 bg-bg_orange-0 p-3 px-6 2xl:p-4 2xl:px-8">
+                <span className="material-icons text-white-0 text-center text-6xl!">
                   cast_for_education
                 </span>
-                <div className="text-xl md:text-2xl font-title font-bold text-center uppercase tracking-wider">
+                <div className="text-center font-title text-xl font-bold tracking-wider uppercase md:text-2xl">
                   {t('services.classes.title')}
                 </div>
               </div>
-              <div className="p-4 md:p-8 text-black gap-8 flex-col flex text-justify">
+              <div className="flex flex-col gap-8 p-4 text-justify text-black md:p-8">
                 {t('services.classes.desc')}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 lg:grid-flow-row grid-rows-[repeat(3,auto)]">
+                <div className="grid grid-cols-1 grid-rows-[repeat(3,auto)] gap-x-8 gap-y-4 lg:grid-flow-row lg:grid-cols-2">
                   {[
                     {
                       name: t('services.classes.classes_title'),
@@ -246,8 +197,7 @@ const Base = () => {
                       types: [
                         {
                           name: t('services.classes.classes_individual'),
-                          // @ts-ignore
-                          price: price.one || '',
+                          price: price?.one ?? '',
                           metric: '/h',
                         },
                       ],
@@ -258,38 +208,34 @@ const Base = () => {
                       types: [
                         {
                           name: t('services.classes.exam_individual'),
-                          // @ts-ignore
-                          price: price.exam || '',
+                          price: price?.exam ?? '',
                           metric: '/h',
                         },
                       ],
                     },
                   ].map((type) => (
                     <div key={type.name}>
-                      <div className="font-bold tracking-wider font-title text-center uppercase bg-bg_orange-0 text-white rounded-full p-2 md:p-4  text-md 2xl:text-lg">
+                      <div className="text-md rounded-full bg-bg_orange-0 p-2 text-center font-title font-bold tracking-wider text-white uppercase md:p-4 2xl:text-lg">
                         {type.name}
                       </div>
-                      <div className="px-2 md:px-4 my-4">{type.desc}</div>
-                      <div className="flex gap-2 flex-col md:flex-row lg:flex-col xl:flex-row text-white center justify-center">
+                      <div className="my-4 px-2 md:px-4">{type.desc}</div>
+                      <div className="center flex flex-col justify-center gap-2 text-white md:flex-row lg:flex-col xl:flex-row">
                         {type.types.map((subtype) => (
                           <div
                             key={subtype.name}
-                            className="bg-bg_orange-0 rounded-3xl flex flex-col items-center w-3/4 sm:w-1/2 lg:w-3/4 xl:w-1/2 self-center border-solid border-4 border-bg_orange-0 overflow-hidden h-full"
+                            className="flex h-full w-3/4 flex-col items-center self-center overflow-hidden rounded-3xl border-4 border-solid border-bg_orange-0 bg-bg_orange-0 sm:w-1/2 lg:w-3/4 xl:w-1/2"
                           >
-                            <div className="font-bold text-lg justify-center font-title flex-grow text-center flex flex-col place-content-stretch uppercase p-1 md:p-2">
+                            <div className="flex grow flex-col place-content-stretch justify-center p-1 text-center font-title text-lg font-bold uppercase md:p-2">
                               {subtype.name}
                             </div>
-                            <div className="flex self-center text-center justify-center bg-bg_white-0 w-full text-textprimary p-1 md:p-2 tracking-normal">
+                            <div className="flex w-full justify-center self-center bg-bg_white-0 p-1 text-center tracking-normal text-textprimary md:p-2">
                               <div className="text-2xl md:text-3xl">
-                                {
-                                  // @ts-ignore
-                                  String(price.format || '').replace(
-                                    '{0}',
-                                    String(subtype.price)
-                                  )
-                                }
+                                {(price?.format ?? '').replace(
+                                  '{0}',
+                                  String(subtype.price),
+                                )}
                               </div>
-                              <div className="self-end text-md">
+                              <div className="text-md self-end">
                                 {subtype.metric}
                               </div>
                             </div>
@@ -301,16 +247,16 @@ const Base = () => {
                 </div>
               </div>
             </div>
-            <div className="rounded-3xl bg-bg_white-0 text-white shadow-md flex flex-col overflow-hidden">
-              <div className="flex gap-4 items-center bg-bg_orange-0 p-3 2xl:p-4 px-6 2xl:px-8">
-                <span className="material-icons text-center !text-5xl 2xl:!text-6xl text-white-0">
+            <div className="flex flex-col overflow-hidden rounded-3xl bg-bg_white-0 text-white shadow-md">
+              <div className="flex items-center gap-4 bg-bg_orange-0 p-3 px-6 2xl:p-4 2xl:px-8">
+                <span className="material-icons text-white-0 text-center text-5xl! 2xl:text-6xl!">
                   article
                 </span>
-                <div className="text-xl 2xl:text-2xl font-title font-bold text-center uppercase tracking-wider">
+                <div className="text-center font-title text-xl font-bold tracking-wider uppercase 2xl:text-2xl">
                   {t('services.text.title')}
                 </div>
               </div>
-              <div className="p-4 md:p-8 text-black gap-8 flex-col flex">
+              <div className="flex flex-col gap-8 p-4 text-black md:p-8">
                 <div className="grid grid-cols-1 gap-6">
                   {[
                     {
@@ -333,25 +279,25 @@ const Base = () => {
                     },
                   ].map((service) => (
                     <div className="flex flex-col gap-4" key={service.name}>
-                      <div className="bg-bg_orange-0 rounded-full p-2 md:p-4 px-4 md:px-8 flex items-center text-white gap-4">
-                        <span className="material-icons text-center !text-2xl md:text-3xl">
+                      <div className="flex items-center gap-4 rounded-full bg-bg_orange-0 p-2 px-4 text-white md:p-4 md:px-8">
+                        <span className="material-icons text-center text-2xl! md:text-3xl">
                           {service.icon}
                         </span>
-                        <div className="font-bold tracking-wider font-title flex-grow text-left flex gap-2 uppercase text-md 2xl:text-lg">
+                        <div className="text-md flex grow gap-2 text-left font-title font-bold tracking-wider uppercase 2xl:text-lg">
                           {service.name}
                         </div>
                       </div>
-                      <div className="px-4 md:px-8 text-justify">
+                      <div className="px-4 text-justify md:px-8">
                         {service.desc}
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="bg-bg_orange-0 rounded-3xl items-center border-solid border-4 border-bg_orange-0 overflow-hidden">
-                  <div className="font-bold text-md 2xl:text-lg font-title flex-grow text-center flex flex-col place-content-center uppercase p-2 text-white">
+                <div className="items-center overflow-hidden rounded-3xl border-4 border-solid border-bg_orange-0 bg-bg_orange-0">
+                  <div className="text-md flex grow flex-col place-content-center p-2 text-center font-title font-bold text-white uppercase 2xl:text-lg">
                     {t('services.text.budget_title')}
                   </div>
-                  <div className="flex bg-bg_white-0 w-full text-textprimary p-2 md:p-4 px-4 md:px-8 tracking-normal text-justify">
+                  <div className="flex w-full bg-bg_white-0 p-2 px-4 text-justify tracking-normal text-textprimary md:p-4 md:px-8">
                     <p
                       dangerouslySetInnerHTML={{
                         __html: t('services.text.budget_text'),
@@ -369,16 +315,16 @@ const Base = () => {
         id="method"
         inverted={true}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-16 text-justify">
+        <div className="grid grid-cols-1 gap-8 text-justify lg:grid-cols-2 2xl:gap-16">
           <div className="lg:col-span-2">
-            <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
+            <div className="mb-4 font-title text-2xl font-bold tracking-wider uppercase md:text-3xl">
               {t('method.title')}
             </div>
             <p dangerouslySetInnerHTML={{ __html: t('method.desc_1') }}></p>
             <p dangerouslySetInnerHTML={{ __html: t('method.desc_2') }}></p>
           </div>
           <div className="">
-            <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
+            <div className="mb-4 font-title text-2xl font-bold tracking-wider uppercase md:text-3xl">
               {t('method.online_classes_title')}
             </div>
             <p
@@ -386,7 +332,7 @@ const Base = () => {
             ></p>
           </div>
           <div className="">
-            <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
+            <div className="mb-4 font-title text-2xl font-bold tracking-wider uppercase md:text-3xl">
               {t('method.individual_classes_title')}
             </div>
             <p
@@ -410,10 +356,8 @@ const Base = () => {
             showDots
             pauseOnHover
             renderButtonGroupOutside={true}
-            // @ts-ignore
             customDot={<CustomDot />}
             renderDotsOutside={true}
-            // @ts-ignore
             customButtonGroup={<CustomButtonGroup />}
           >
             {[
@@ -508,15 +452,15 @@ const Base = () => {
             ].map((review) => (
               <div
                 key={review.name}
-                className="bg-bg_blue-0 p-6 text-white p-8 rounded-3xl mx-4 flex flex-col items-center justify-center h-full gap-4 select-none"
+                className="mx-4 flex h-full flex-col items-center justify-center gap-4 rounded-3xl bg-bg_blue-0 p-6 p-8 text-white select-none"
               >
-                <p className="italic text-justify">
-                  <span className="material-icons text-center !text-2xl md:text-3xl">
+                <p className="text-justify italic">
+                  <span className="material-icons text-center text-2xl! md:text-3xl">
                     format_quote
                   </span>
-                  <span className=" opacity-80">{review.text}</span>
+                  <span className="opacity-80">{review.text}</span>
                 </p>
-                <div className="self-end  text-right font-title">
+                <div className="self-end text-right font-title">
                   <p className="text-xl font-bold">{review.name}</p>
                 </div>
               </div>
@@ -526,10 +470,10 @@ const Base = () => {
       </Section>
 
       <Section id="contact">
-        <div className="bg-bg_orange-0 text-white shadow-md flex flex-col overflow-hidden rounded-[2rem] md:rounded-[4rem] p-8 md:p-8 2xl:p-16 ">
-          <div className="flex flex-col lg:flex-row gap-16">
-            <div className="flex-grow-[2] w-full flex-shrink flex-1">
-              <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
+        <div className="flex flex-col overflow-hidden rounded-[2rem] bg-bg_orange-0 p-8 text-white shadow-md md:rounded-[4rem] md:p-8 2xl:p-16">
+          <div className="flex flex-col gap-16 lg:flex-row">
+            <div className="w-full flex-1 shrink grow-[2]">
+              <div className="mb-4 font-title text-2xl font-bold tracking-wider uppercase md:text-3xl">
                 {t('contact.title')}
               </div>
               <div className="flex flex-col gap-4">
@@ -540,17 +484,17 @@ const Base = () => {
                     value: (
                       <div>
                         <small className="mr-1 font-bold tracking-widest">
-                          PT
+                          ES
                         </small>
-                        +351 915 204 911
+                        +34 642 26 96 86
                       </div>
                     ),
-                    url: 'tel:+351915204911',
+                    url: 'tel:+34642269686',
                   },
                   {
                     icon: <FontAwesomeIcon icon={faWhatsapp} color={'white'} />,
                     name: 'WhatsApp',
-                    url: 'https://wa.me/351915204911',
+                    url: 'https://wa.me/34642269686',
                   },
                   {
                     icon: 'mail',
@@ -558,31 +502,25 @@ const Base = () => {
                     value: <div>flaviasenglish@gmail.com</div>,
                     url: 'mailto:flaviasenglish@gmail.com',
                   },
-                  {
-                    icon: <FontAwesomeIcon icon={faLinkedin} color={'white'} />,
-                    name: 'LinkedIn',
-                    value: '',
-                    url: 'https://www.linkedin.com/in/flaviaforcatho/',
-                  },
                 ].map((contact) => (
                   <a
                     key={contact.name}
                     href={contact.url}
-                    className="items-center border-solid border-4 border-white p-2 px-4 md:px-6 rounded-full"
+                    className="items-center rounded-full border-4 border-solid border-white p-2 px-4 md:px-6"
                     onClick={() => gaEventTracker(`click-${contact.name}`)}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <div className="font-bold uppercase mb-2 flex gap-2 md:gap-4 items-center">
-                      <div className="material-icons text-center !text-4xl md:text-3xl">
+                    <div className="mb-2 flex items-center gap-2 font-bold uppercase md:gap-4">
+                      <div className="material-icons text-center text-4xl! md:text-3xl">
                         {contact.icon}
                       </div>
                       <div className="flex flex-col">
-                        <div className="tracking-widest text-xl md:text-2xl font-title mt-1">
+                        <div className="mt-1 font-title text-xl tracking-widest md:text-2xl">
                           {contact.name}
                         </div>
                         {contact.value && (
-                          <div className="text-base font-bold md:text-lg normal-case -mt-2 -mb-2">
+                          <div className="-mt-2 -mb-2 text-base font-bold normal-case md:text-lg">
                             {contact.value}
                           </div>
                         )}
@@ -592,8 +530,8 @@ const Base = () => {
                 ))}
               </div>
             </div>
-            <div className="flex-grow-[3] w-full flex-shrink flex-1">
-              <div className="text-2xl md:text-3xl font-title font-bold mb-4 uppercase tracking-wider">
+            <div className="w-full flex-1 shrink grow-[3]">
+              <div className="mb-4 font-title text-2xl font-bold tracking-wider uppercase md:text-3xl">
                 {t('contact.send_a_message')}
               </div>
               <Contact />

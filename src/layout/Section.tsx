@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 type ISectionProps = {
   title?: string | ReactNode;
@@ -12,14 +12,14 @@ type ISectionProps = {
 const Section = (props: ISectionProps) => (
   <div
     id={props.id}
-    className={`max-w-screen-xl md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 md:px-16 ${
+    className={`mx-auto max-w-(--breakpoint-xl) px-4 md:max-w-(--breakpoint-md) md:px-16 lg:max-w-(--breakpoint-lg) xl:max-w-(--breakpoint-xl) ${
       props.yPadding ? props.yPadding : 'py-10'
     } ${props.className}`}
   >
     {(props.title || props.description) && (
       <div className="mb-8 text-center">
         {props.title && (
-          <h2 className="text-4xl text-textprimary-100 font-title uppercase tracking-widest">
+          <h2 className="text-textprimary-100 font-title text-4xl tracking-widest uppercase">
             {props.title}
           </h2>
         )}

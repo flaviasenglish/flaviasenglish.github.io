@@ -1,32 +1,108 @@
-@tailwind base;
+@import 'tailwindcss';
 
-@tailwind components;
+@theme {
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.4rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.6rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 4rem;
 
-@tailwind utilities;
+  --font-*: initial;
+  --font-title: 'Megante';
+  --font-sans: 'DidactGothic', 'Open Sans', sans-serif;
 
-@font-face {
-  font-family: "DidactGothic";
-  src: url("../../public/assets/fonts/DidactGothic-Regular.ttf");
+  --color-primary: var(--color-black);
+  --color-textprimary: var(--color-black);
+  --color-background: var(--color-white);
+  --color-bg_blue-0: #37519f;
+  --color-bg_orange-0: #f0826d;
+  --color-bg_white-0: #fef1e5;
+
+  /* Hero photos: each one rotates clockwise into place and fades in, like a
+     card being dealt onto a table. The final pose comes from --rest. */
+  --animate-deal-card: deal-card 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes deal-card {
+    from {
+      opacity: 0;
+      transform: var(--rest) translate(-6%, -6%) rotate(-14deg) scale(1.06);
+    }
+    to {
+      opacity: 1;
+      transform: var(--rest);
+    }
+  }
+}
+
+.animate-deal-card {
+  transform: var(--rest);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-deal-card {
+    animation: none;
+  }
 }
 
 @font-face {
-  font-family: "Barlow";
-  src: url("../../public/assets/fonts/BarlowCondensed-Regular.ttf");
+  font-family: 'DidactGothic';
+  src: url('/assets/fonts/DidactGothic-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Rubik";
-  src: url("../../public/assets/fonts/Rubik.ttf");
+  font-family: 'Megante';
+  src: url('/assets/fonts/Megante.ttf');
 }
 
-@font-face {
-  font-family: "Megante";
-  src: url("../../public/assets/fonts/Megante.ttf");
+body::-webkit-scrollbar-track {
+  border-radius: 0;
+  @apply bg-bg_white-0;
 }
 
-@font-face {
-  font-family: "OPN";
-  src: url("../../public/assets/fonts/OPN.ttf");
+body::-webkit-scrollbar {
+  width: 12px;
+  @apply bg-bg_blue-0;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  @apply bg-bg_blue-0;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex w-full max-w-full cursor-pointer place-items-center justify-center rounded-full text-center font-title font-bold tracking-wider uppercase select-none md:w-max md:min-w-[180px];
+  }
+
+  .btn-base {
+    @apply px-6 py-3 text-sm md:text-lg;
+  }
+
+  .btn-xl {
+    @apply px-8 py-4 text-base lg:text-lg;
+  }
+
+  .btn-primary {
+    @apply bg-bg_blue-0 text-white hover:bg-[#5a72b9];
+  }
+
+  .btn-fullwidth {
+    @apply w-full;
+  }
+
+  .navbar li {
+    @apply w-full text-center md:w-auto;
+  }
+
+  .navbar li a {
+    @apply flex w-full justify-center px-4 py-2 font-title tracking-wider md:inline md:px-2 lg:px-3 xl:px-4;
+  }
 }
 
 .react-multi-carousel-dot-list {

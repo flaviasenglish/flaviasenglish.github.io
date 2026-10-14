@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 type IBackgroundProps = {
   children: ReactNode;
@@ -13,14 +13,14 @@ const BackgroundRound = (props: IBackgroundProps) => (
     id={props.id}
     className={`${
       props.color
-    } rounded-r-[2rem] md:rounded-r-[4rem] mr-4 md:mr-16 2xl:mr-32 mt-10 mb-10 p-8 md:p-8 2xl:p-16 md:pl-32 2xl:pl-64 md:pr-16 2xl:pr-32 shadow-md ${
+    } mt-10 mr-4 mb-10 rounded-r-[2rem] p-8 shadow-md md:mr-16 md:rounded-r-[4rem] md:p-8 md:pr-16 md:pl-32 2xl:mr-32 2xl:p-16 2xl:pr-32 2xl:pl-64 ${
       props.inverted
-        ? 'ml-4 2xl:ml-32 !mr-0 !2xl:mr-0 2xl:pl-32 2xl:pr-64 rounded-l-[2rem] md:rounded-l-[4rem] !rounded-r-none'
+        ? 'mr-0! ml-4 rounded-l-[2rem] rounded-r-none! md:rounded-l-[4rem] 2xl:ml-32 2xl:pr-64 2xl:pl-32'
         : ''
     }`}
   >
     {props.title && (
-      <div className="font-title font-bold mb-4">{props.title}</div>
+      <div className="mb-4 font-title font-bold">{props.title}</div>
     )}
 
     {props.children}

@@ -1,8 +1,10 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-export-i18n';
+import type { MouseEvent } from 'react';
+
+import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 
 import { scrollToDiv as globalScrollToDiv } from '../globals';
+import { LanguageSelector } from './LanguageSelector';
 
 type INavbarTwoColumnsProps = {
   open: boolean;
@@ -10,129 +12,70 @@ type INavbarTwoColumnsProps = {
 };
 
 const NavbarTwoColumns = (props: INavbarTwoColumnsProps) => {
-  const router = useRouter();
-
   const { t } = useTranslation();
-  // const [query] = useLanguageQuery();
 
-  const scrollToDiv = (id: string) => {
+  const scrollToDiv = (event: MouseEvent, id: string) => {
+    event.preventDefault();
     props.setOpen(false);
     globalScrollToDiv(id);
   };
 
   const menuItems = (
     <>
-      <li>
-        <Link
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToDiv('aboutme');
-          }}
-          shallow={true}
-        >
-          {t('header.about_me')}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToDiv('services');
-            props.setOpen(false);
-          }}
-        >
-          {t('header.services')}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToDiv('method');
-            props.setOpen(false);
-          }}
-        >
-          {t('header.method')}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToDiv('testimonies');
-            props.setOpen(false);
-          }}
-        >
-          {t('header.testimonies')}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToDiv('contact');
-            props.setOpen(false);
-          }}
-        >
-          {t('header.contact')}
-        </Link>
-      </li>
-      <style jsx>
-        {`
-          li {
-            @apply w-full md:w-auto text-center;
-          }
-
-          li :global(a),
-          li :global(span) {
-            @apply w-full flex justify-center md:inline px-4 py-2 tracking-wider font-title;
-          }
-        `}
-      </style>
+      {[
+        { id: 'aboutme', label: t('header.about_me') },
+        { id: 'services', label: t('header.services') },
+        { id: 'method', label: t('header.method') },
+        { id: 'testimonies', label: t('header.testimonies') },
+        { id: 'contact', label: t('header.contact') },
+      ].map((item) => (
+        <li key={item.id}>
+          <a href={`#${item.id}`} onClick={(e) => scrollToDiv(e, item.id)}>
+            {item.label}
+          </a>
+        </li>
+      ))}
     </>
   );
 
   return (
-    <div className="flex justify-between flex-wrap items-center flex-grow">
-      <div>
-        <Link
+    <div className="flex grow items-center justify-between gap-2">
+      <div className="min-w-0 shrink">
+        <a
           href="#"
-          onClick={() => {
+          onClick={(event) => {
+            event.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
           <img
-            src={`${router.basePath}/assets/images/logo_top.png`}
-            className="h-10 2xl:h-20 2xl:py-2"
+            src={`${import.meta.env.BASE_URL}assets/images/logo_top.png`}
+            className="h-auto max-h-10 w-auto max-w-full 2xl:max-h-20 2xl:py-2"
           />
-        </Link>
+        </a>
       </div>
 
-      <nav className="min-h-16">
-        <ul className="navbar gap-0 hidden md:flex items-center font-bold tracking-wide uppercase text-sm">
+      <nav className="flex shrink-0 items-center gap-3 md:gap-2 lg:gap-4">
+        <ul className="navbar hidden items-center gap-0 text-sm font-bold tracking-wide uppercase md:flex">
           {menuItems}
         </ul>
         <ul
-          className={`navbar text-xl flex gap-0 p-8 w-full h-screen items-center flex-col md:hidden fixed right-0 font-bold uppercase top-14 bg-white bottom-0 transition-all ${
-            !props.open ? '-right-full' : ''
-          }`}
+          className={clsx(
+            'navbar fixed top-14 bottom-0 flex h-screen w-full flex-col items-center gap-0 bg-white p-8 text-xl font-bold uppercase transition-all md:hidden',
+            props.open ? 'right-0' : '-right-full',
+          )}
         >
           {menuItems}
         </ul>
+        <LanguageSelector />
         {/* <!-- Mobile menu button --> */}
-        <div className="md:hidden flex items-center">
+        <div className="flex items-center md:hidden">
           <button
-            className="outline-none mobile-menu-button"
+            className="mobile-menu-button cursor-pointer outline-hidden"
             onClick={() => props.setOpen(!props.open)}
           >
             <svg
-              className="w-6 h-6 text-gray-500"
-              x-show="!showMenu"
+              className="h-6 w-6 text-gray-500"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"

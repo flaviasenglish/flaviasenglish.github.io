@@ -1,7 +1,5 @@
-import React from 'react';
-
-import { useTranslation } from 'next-export-i18n';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '../button/Button';
 
@@ -10,11 +8,11 @@ const Contact = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<Record<string, string>>();
 
   const { t } = useTranslation();
 
-  const onSubmit = async (data: { [key: string]: string }) => {
+  const onSubmit = (data: Record<string, string>) => {
     const mapping = {
       name: 'entry.1517429895',
       email: 'entry.378689295',
@@ -32,7 +30,7 @@ const Contact = () => {
       const hiddenField = document.createElement('input');
       hiddenField.type = 'hidden';
       hiddenField.name = gKey;
-      hiddenField.value = data[key || ''] || '';
+      hiddenField.value = data[key] ?? '';
 
       form.appendChild(hiddenField);
     });
@@ -43,105 +41,105 @@ const Contact = () => {
 
   return (
     <form
-      className="w-full flex flex-col gap-4"
+      className="flex w-full flex-col gap-4"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="w-full">
         <label
-          className="block uppercase tracking-wide text-white-200 text-sm font-bold  text-left"
+          className="text-white-200 block text-left text-sm font-bold tracking-wide uppercase"
           htmlFor="grid-name"
         >
           {t('contact.form.name')}
         </label>
         <input
-          className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="block w-full appearance-none rounded-sm border border-gray-100 bg-white px-4 py-3 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-hidden"
           id="grid-name"
           type="text"
-          placeholder="Nome"
+          placeholder={t('contact.form.name')}
           {...register('name', {
             required: true,
           })}
         />
         {errors.name && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.required_field')}
           </div>
         )}
       </div>
       <div className="w-full">
         <label
-          className="block uppercase tracking-wide text-white-200 text-sm font-bold "
+          className="text-white-200 block text-sm font-bold tracking-wide uppercase"
           htmlFor="grid-email"
         >
           {t('contact.form.email')}
         </label>
         <input
-          className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="block w-full appearance-none rounded-sm border border-gray-100 bg-white px-4 py-3 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-hidden"
           id="grid-email"
           type="text"
-          placeholder="E-mail"
+          placeholder={t('contact.form.email')}
           {...register('email', {
             required: true,
             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
           })}
         />
         {errors.email?.type === 'required' && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.required_field')}
           </div>
         )}
 
         {errors.email?.type === 'pattern' && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.type_valid_email')}
           </div>
         )}
       </div>
       <div className="w-full">
         <label
-          className="block uppercase tracking-wide text-white-200 text-sm font-bold "
+          className="text-white-200 block text-sm font-bold tracking-wide uppercase"
           htmlFor="grid-phone"
         >
           {t('contact.form.phone')}
         </label>
         <input
-          className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="block w-full appearance-none rounded-sm border border-gray-100 bg-white px-4 py-3 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-hidden"
           id="grid-phone"
           type="text"
-          placeholder="Telefone ou Whatsapp com DDD"
+          placeholder={t('contact.form.phone')}
           {...register('phone', {
             required: true,
             pattern: /^(\+|\d)(0|[1-9]\d*)(\.\d+)?$/,
           })}
         />
         {errors.phone?.type === 'required' && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.required_field')}
           </div>
         )}
         {errors.phone?.type === 'pattern' && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.must_be_a_number')}
           </div>
         )}
       </div>
       <div className="w-full">
         <label
-          className="block uppercase tracking-wide text-white-200 text-sm font-bold "
+          className="text-white-200 block text-sm font-bold tracking-wide uppercase"
           htmlFor="grid-subject"
         >
           {t('contact.form.subject')}
         </label>
         <div className="relative">
           <select
-            className="block overflow-ellipsis overflow-hidden appearance-none w-full bg-white border border-gray-100 text-black py-3 px-4 pr-14 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="block w-full appearance-none overflow-hidden rounded-sm border border-gray-100 bg-white px-4 py-3 pr-14 leading-tight text-ellipsis text-black focus:border-gray-500 focus:bg-white focus:outline-hidden"
             id="grid-subject"
-            placeholder=""
+            defaultValue=""
             {...register('subject', {
               required: true,
             })}
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               {t('contact.form.subjects.select_a_subject')}
             </option>
             <option value={'Tenho interesse em fazer aulas'}>
@@ -157,7 +155,7 @@ const Contact = () => {
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-800">
             <svg
-              className="fill-current h-8 w-8"
+              className="h-8 w-8 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
@@ -166,28 +164,28 @@ const Contact = () => {
           </div>
         </div>
         {errors.subject && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.required_field')}
           </div>
         )}
       </div>
       <div className="w-full">
         <label
-          className="block uppercase tracking-wide text-white-200 text-sm font-bold "
+          className="text-white-200 block text-sm font-bold tracking-wide uppercase"
           htmlFor="grid-message"
         >
           {t('contact.form.message')}
         </label>
         <textarea
-          className="appearance-none block w-full bg-white text-black border border-gray-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="block w-full appearance-none rounded-sm border border-gray-100 bg-white px-4 py-3 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-hidden"
           id="grid-message"
           {...register('message', {
             required: true,
           })}
-          placeholder="Mensagem"
+          placeholder={t('contact.form.message')}
         />
         {errors.message && (
-          <div className="block uppercase tracking-wide text-sm font-bold text-left text-red-700 ">
+          <div className="block text-left text-sm font-bold tracking-wide text-red-700 uppercase">
             {t('contact.form.error.required_field')}
           </div>
         )}
